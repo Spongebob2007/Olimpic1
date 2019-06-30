@@ -73,7 +73,7 @@ int main(int argc, char*argv[])
 			}
 		        DNK.push_back(pref);
 			for (auto&DNKTEST : DNK) {
-				k[i] += checkGeNinDnk(DNKTEST, GEN);
+				k[i].push_back(checkGeNinDnk(DNKTEST, GEN));
 			}
 			if (k[i] == 0)
 			{

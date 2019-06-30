@@ -66,15 +66,18 @@ int main(int argc, char*argv[])
 		}
 		if (masstr[0] == '?')
 		{
-		        string pref;
-		        for(int i = 1;i<4;i++)
-			{
-			   pref += masstr[i];
-			}
-		        DNK.push_back(pref);
+		    //    string pref;
+		  //      for(int i = 1;i<4;i++)
+		//	{
+		//	   pref += masstr[i];
+		//	}
+			k[i] = 0;
+		      //  DNK.push_back(pref);
+			int d = 0;
 			for (auto&DNKTEST : DNK) {
-				k[i].push_back(checkGeNinDnk(DNKTEST, GEN));
+				d += (checkGeNinDnk(DNKTEST, GEN));
 			}
+			k[i] += d;
 			if (k[i] == 0)
 			{
 				string g;

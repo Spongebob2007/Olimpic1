@@ -1,0 +1,185 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+static short int d;
+int main()
+{	
+	vector<int>A;
+	vector<int>B;
+	vector<int>C;
+	vector<int>D;
+    vector<int>Ax;
+	vector<int>Bx;
+	vector<int>Cx;
+	vector<int>Dx;
+	short int stroka;
+	short int stolbec;
+	short int preob;
+	cout << "Enter a stolbec" << endl;
+	cin >> stolbec;
+	cout << "Enter a stroka" << endl;
+	cin >> stroka;
+	std::cout << "Enter a entity preobrazovaniy of all elements" << endl;
+	cin >> preob;
+    int **Mat = new int*[stroka];
+	for (int i = 0;i < stroka; i++)
+	{
+		Mat[i] = new int[stolbec]();
+	}
+	for (int i = 0;i < stroka;i++)
+	{
+		for (int v = 0; v < stolbec;v++)
+		{
+			Mat[i][v] = d; //Доделать
+			d++;
+		}
+	}
+	cout << "Enter a preobrazovaniy" << endl;
+	char preobrazovaniy[100];
+	cin >> preobrazovaniy;
+	cout << "Enter a entity of A elements" << endl;
+	short int f = 0;
+	cin >> f;	
+
+
+
+
+
+
+
+
+	int  t = 0;
+	for (int v = 0;v < f;v++)
+	{
+		cin >> t;
+		A.push_back(t);
+		Ax.push_back(t);
+	}	
+	if (f <= preob)
+	{
+		for (int i = f;f < preob;i++)
+		{
+			int	y = (10007 * Ax[i - 2] + 10009 * Ax[i - 1] + 87277) % f;
+			Ax.push_back(y);
+		}
+	}
+    	cout << "________________" << endl;//
+	    for (int&at : Ax)
+			{
+				cout << at << endl;
+			}
+		cout << "__________________" << endl;//
+	cout << "Enter a entity of B elements" << endl;
+	short int r = 0;
+	cin >> r;	
+	int g = 0;
+	for (int v = 0;v < r;v++)
+	{
+		cin >> g;
+		B.push_back(g);
+		Bx.push_back(g);
+	}	
+	if (r < preob)
+	{
+		for (int i = r;r < preob;i++) {
+			int g = (10007 * Bx[i - 2] + 10009 * Bx[i - 1] + 87277) % r;
+			Bx.push_back(g);
+			r++;
+		}
+	
+	}
+	cout << "_____________" << endl;
+	for (int&at : Bx)
+		{
+			cout << at << endl;
+		}
+	cout << "______________" << endl;
+		cout << "Enter a entity of C elements" << endl;
+		short int h = 0;
+		cin >> h;
+		int n = 0;
+		for (int v = 0;v < h;v++)
+		{
+			cin >> n;
+			C.push_back(n);
+			Cx.push_back(n);
+		}
+	
+    if (h < preob)
+	{
+
+			for (int i = h;h < preob;i++)
+			{
+				int resg = (10007 * Cx[i - 2] + 10009 * Ax[i - 1] + 87277) % h;
+				Cx.push_back(resg);
+				h++;
+			}
+		
+		}	
+	    cout << "_________________" << endl;
+	    for (int&at : Cx)
+			{
+				cout << at << endl;
+			}
+     	cout << "____________________" << endl;
+		cout << "Enter a entity of D" << endl;
+		short int h1 = 0;
+		cin >> h1;
+		for (int v = 0;v < h1;v++)
+		{	
+			int f = 0;
+			cin >> f;
+			D.push_back(f);
+			Dx.push_back(f);
+		}
+		if (h < preob)
+		{
+			for (int i = h1;h1 < preob;i++)
+			{
+				int g = (10007 * Dx[i - 2] + 10009 * Dx[i - 1] + 87277) % h1;
+				Dx.push_back(g);
+				h1++;
+			}
+
+		}		
+		cout << "_________________________" << endl;
+		for(int&ah:Dx){
+        		cout << ah << endl;
+			}
+		cout << "________________________" << endl;
+		for (int i = 0; i < preob;i++)
+		{
+			if (preobrazovaniy[i] == 'c')
+			{
+				for (int c = 0; c < stroka; c++)
+				{
+					swap(Mat[c][Dx[i]], Mat[c][Bx[i]]);
+				}
+			}
+			if (preobrazovaniy[i] == 'r')
+			{
+				for (int g = 0;g < stolbec;g++)
+				{
+					swap(Mat[g][Ax[i]], Mat[g][Cx[i]]);
+				}
+
+			}
+			if (preobrazovaniy[i] == 'f')
+			{
+				swap(Mat[Ax[i]][Bx[i]], Mat[Cx[i]][Dx[i]]);
+			}
+		}
+		for (int i = 0;i < stroka;i++)
+		{
+			for (int v = 0; v < stolbec;v++)
+			{
+				cout << Mat[i][v] << endl;
+			}
+		}
+		for (int i = 0; i < stolbec;i++)
+		{
+			delete[]Mat[i];
+		}
+		delete[]Mat;	
+		system("pause");
+}

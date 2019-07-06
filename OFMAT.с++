@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 static short int d;
 int main()
@@ -127,6 +128,7 @@ int main()
 		cin >> h1;
 		for (int v = 0;v < h1;v++)
 		{	
+			cout << "Enter a element number  " << v;
 			int f = 0;
 			cin >> f;
 			D.push_back(f);
@@ -153,14 +155,14 @@ int main()
 			{
 				for (int c = 0; c < stroka; c++)
 				{
-					swap(Mat[c][Dx[i]], Mat[c][Bx[i]]);
+					swap(Mat[Dx[i]][c], Mat[Bx[i]][c]);
 				}
 			}
 			if (preobrazovaniy[i] == 'r')
 			{
 				for (int g = 0;g < stolbec;g++)
 				{
-					swap(Mat[g][Ax[i]], Mat[g][Cx[i]]);
+					swap(Mat[Ax[i]][g], Mat[Cx[i]][g]);
 				}
 
 			}
@@ -169,13 +171,15 @@ int main()
 				swap(Mat[Ax[i]][Bx[i]], Mat[Cx[i]][Dx[i]]);
 			}
 		}
+		int m[2];
 		for (int i = 0;i < stroka;i++)
 		{
 			for (int v = 0; v < stolbec;v++)
 			{
-				cout << Mat[i][v] << endl;
+				m[1] += (int(Mat[i][v]) * pow(17, i) * pow(19, v) % (pow(10, 9)));
 			}
 		}
+		cout << m[1] << endl;
 		for (int i = 0; i < stolbec;i++)
 		{
 			delete[]Mat[i];

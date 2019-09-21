@@ -47,6 +47,7 @@ int main()
 		number[chetchik][i] = namelanguage; // Строка начинается с одного ведь строка номер 0 занята именем человека, а номер столбца это номер человека который знает язык		
 		std::cout << "Do you want a countinue enter a name of lang, Yes = y, No = n" << endl;
 		cin >> b;
+		// повтор с помощью goto
 		if (b == 'y') {
 			goto tape;
 		}
@@ -60,12 +61,14 @@ int main()
 	cin >> start;
 	cout << "Enter a number human(start of ZERO) for stop";
 	cin >> stop;
+	// Просим ввести старт и стоп для алгоритма дейкстра
 	for (int i1 = 0; i1 <  numberpeople;i1++) {
 		for (int i2 = 0; i2 < numblang;i2++)
 		{
-			cout << number[i1][i2];
+			cout << number[i1][i2]; // Печатаем матрицу
 		}
 	}
+	// Удаляем матрицу
 	for (int c = 0; c < numblang; c++)
 	{
 		delete[]number[c];

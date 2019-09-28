@@ -6,7 +6,7 @@
 
 #include <vector>
 
-
+#include <map>
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main()
 
 {
 
-	vector <string> lang;
+	map<int, int>quant;
 
 	short int numblang;
 
@@ -35,7 +35,7 @@ int main()
 	int** number;
 	int t = numberpeople * 8;
 	int b = numblang * 8;
-	number = new int* [t];
+	number = new int*[t];
 
 	for (int i = 0; i < t; i++)
 
@@ -51,34 +51,47 @@ int main()
 
 		{
 			number[i1][i2] = 0;
-			cout << number[i1][i2] ; // Печатаем матрицу
+			cout << number[i1][i2]; // Печатаем матрицу
 
 		}
 
 	}
 
 
+	
 	int namenumber = 0;
 
-	for (int i = 0; i < numberpeople; i++)
+    // начинаем с 1 столбца, а не с нулевого потому что 0 строка и нулевого столбца будет равна нулю и не использоваться
+	for (int i = 1; i <= numberpeople; i++)
 
-	{
+	{	
+	    namenumber = 0;
 
-		cout << "Enter a name for human number " << i << "\n";
+        cout << "Enter a name for human number " << i;
 
-		cin >> namenumber;
+     	cin >> namenumber;
 
 		number[0][i] = namenumber;
-
+		
 		// итерируемся по столбцам нулевой строки и присваиваем ячейкам имена(людей)
 
 	}
+	
+	for (int i1 = 0; i1 < numberpeople; i1++) {
 
+		for (int i2 = 1; i2 < numblang; i2++)
+
+		{
+			cout << number[i1][i2]; // Печатаем матрицу
+
+		}
+
+	}
 	// делаем цикл для понятия какой человек знает какой язык
 
-	for (int i = 0; i < numberpeople; i++) {
-	
-		int chetchik = 0;
+	for (int i = 1; i <= numberpeople; i++) {
+
+		int chetchik = 1;
 
 	tape:
 

@@ -77,7 +77,7 @@ int main()
 
 	int b = numblang * 16;
 
-	number = new int*[t];
+	number = new int* [t];
 
 
 
@@ -103,19 +103,13 @@ int main()
 
 		for (int i2 = 0; i2 < numblang; i2++)
 
-
-
 		{
 
 			number[i1][i2] = 0;
 
 			cout << number[i1][i2]; // Печатаем матрицу
 
-
-
 		}
-
-
 
 	}
 
@@ -303,83 +297,103 @@ int main()
 
 
 
-      
+
 	// Получаем незаполненую смежную матрицу
 	// Quant это ассоциативный массив
-	
+
 	for (int i1 = 1; i1 <= numberpeople; i1++)
 	{
+		int costoftranslate = 0;
+		int namelang = 0;
+		int nametwomantwolang = 0;
 		for (int i2 = 1; i2 <= numblang; i2++)
 		{
-			for (int i3 = 2; i3 <= numberpeople; i3)
+			for (int i3 = 2; i3 <= numberpeople; i3++)
 			{
-				for (int i4 = 1; i4 <= numblang; i4)
-		  // Заполняем частично матрицу смежности и оставшиеся значения заполняем (в другом цикле)
+				for (int i4 = 1; i4 <= numblang; i4++)
+					// Заполняем частично матрицу смежности и оставшиеся значения заполняем (в другом цикле)
 				{
-					if (number[i2][i1] == number[i3][i4])
+					if (number[i2][i1] == number[i4][i3])
 					{
 						number[i2][i1] = quant[int(number[i2][i1])];
-						
 						// Но что делать если значений одинаковых не нашлось
 						// придется позвать переводчика, но как это сделать
 						// И что делать когда значений несколько и как их сравнить
 					}
+					// Поиск перевода по наименьшей цене
+					else
+					{
+						nametwomantwolang = i3;
+						namelang = number[i2][i1];
+						// namelang имя языка для которого ищем наименьший 
+						for (int name = 1; name <= namelang; name++)
+						{
+							for (int icols = 1; icols <= numberpeople; icols++)
+							{
+								for (int irows = 1; irows <= numblang; irows++)
+								{
+									// Смотрим равен ли язык по которому мы итерируемся языку который нам нужен
+									// cost это цена перевода
+									// Смотрим ли есть ли такой язык в владение человека у которого мы ищем одинаковый язык(последний человек)
+									
+										if (number[icols][irows] == number[name][i2] && number[icols][irows] == number[i3][i4])
+										{
+										
+											// Если текущая цена больше чем цена обьекта по которому мы итерируемся
+											// То присваиваем нашей текущей цене значение цены объекта  по которому мы итерируемся
+											if (costoftranslate > quant[number[icols][irows]])
+											{
+												costoftranslate = quant[number[icols][irows]];
+											}
+											// Если значение по которому мы итерируемся то оставляем наше текущее значение
+											// И пропускаем ход
+											else
+											{
+												continue;
+											}
+											//if (irows == numblang && icols == numberpeople)
+											//{
+											//	number[i2][i1] = costoftranslate + quant[];
+											//}
+
+										}
+										/// Дописать конечный маршрут с 2 человека до 3.
+										/// 
+										/// Нужно дописать цикл в котором будет выбираться язык который выбрать для перевода с 2 человека до 3 человека
+								        /// И добавить Goto если больше 2 прослоек(между 1 и вторым человеком)	
+										/// То есть нам нужен опять же двойной цикл в котором будет искаться с помощью переменной nametwomantwolang
+										/// Найти язык  который мы будем использовать при конечном переводе с языка 2-3
+										/// Затем все цены стоимости переводов суммировать и это значение и будет являться именем ячейки человека номер 1
+									}
+								}
+							}
+					}
 				}
 			}
-
 		}
 		
+	}
+	
+	
+	// Мы заполнили матрицу
 
-		// Мы заполнили матрицу
+	int start = 0;
 
-		int start = 0;
+	int stop = 0;
 
-		int stop = 0;
+	cout << "Enter a number human(start of ZERO) for start";
 
-		cout << "Enter a number human(start of ZERO) for start";
+	cin >> start;
 
-		cin >> start;
+	cout << "Enter a number human(start of ZERO) for stop";
 
-		cout << "Enter a number human(start of ZERO) for stop";
+	cin >> stop;
 
-		cin >> stop;
+	// Просим ввести старт и стоп для алгоритма дейкстра
 
-		// Просим ввести старт и стоп для алгоритма дейкстра
+	for (int i1 = 0; i1 < numberpeople; i1++) {
 
-		for (int i1 = 0; i1 < numberpeople; i1++) {
-
-			for (int i2 = 0; i2 < numblang; i2++)
-
-
-
-			{
-
-
-
-				cout << number[i1][i2]; // Печатаем матрицу
-
-
-
-			}
-
-
-
-		}
-
-
-
-		
-
-
-		// АЛГОРИТМ ДЕЙКСТРЫ _ TO DO
-
-
-
-		
-		// Удаляем матрицу
-
-
-		for (int c = 0; c < b; c++)
+		for (int i2 = 0; i2 < numblang; i2++)
 
 
 
@@ -387,7 +401,7 @@ int main()
 
 
 
-			delete[]number[c];
+			cout << number[i1][i2]; // Печатаем матрицу
 
 
 
@@ -395,7 +409,40 @@ int main()
 
 
 
-		delete[]number;
+	}
+
+
+
+
+
+
+	// АЛГОРИТМ ДЕЙКСТРЫ _ TO DO
+	// Алгоритм дейкстры состоит из 2 частей
+	// 1 часть это нахождение одинаковых языков и их стоимость
+	// 2 часть (по необходимости) это нахождение одного или нескольких переводчиков рекурсивно и суммированная стоимость и будет являться стоимостью пути
+
+
+
+	// Удаляем матрицу
+
+
+	for (int c = 0; c < b; c++)
+
+
+
+	{
+
+
+
+		delete[]number[c];
+
+
+
+	}
+
+
+
+	delete[]number;
 
 
 

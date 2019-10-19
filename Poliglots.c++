@@ -1,6 +1,7 @@
 // Нужно дорешать задачу
 /// Ошибки это Vector subscript out of range
 /// Не отображаются полностью все имена людей(может быть переполнение буфера)
+// ПРАВИЛЬНО ЗАПОЛНИТЬ МАТРИЦУ
 // https://codeforces.com/gym/102375/problem/A
 // https://codeforces.com/gym/102330/problem/G
 // https://codeforces.com/contest/1237/problem/A
@@ -21,23 +22,17 @@
 #include <vector>
 
 
+#include <iomanip> 
+
 
 #include <map>
 
-
-
-using namespace std;
-
-void(int **number,short int numblang,short int numberpeople);
+void Arr(int** number, short int numblang, short int numberpeople, std::map <int, int> quant);
 
 
 int main()
-
-
-
 {
-
-
+	using namespace std;
 
 	map<int, int>quant;
 
@@ -149,33 +144,21 @@ int main()
 
 		number[1][i] = namenumber;
 
-
-
-		// итерируемся по столбцам нулевой строки и присваиваем ячейкам имена(людей)
-
-
+		// итеируемся по столбцам нулевой строки и присваиваем ячейкам имена(людей)
 
 	}
 
 
 
-	for (int i1 = 0; i1 < numberpeople; i1++) {
-
-
+	for (int i1 = 0; i1 < numberpeople; i1++)
+	{
 
 		for (int i2 = 0; i2 < numblang; i2++)
-
-
-
 		{
 
 			cout << number[i1][i2]; // Печатаем матрицу
 
-
-
 		}
-
-
 
 	}
 
@@ -183,7 +166,8 @@ int main()
 
 
 
-	for (int i = 1; i <= numberpeople; i++) {
+	for (int i = 1; i <= numberpeople; i++)
+	{
 
 
 
@@ -192,7 +176,7 @@ int main()
 
 
 	tape:
-		if (chetchik >= numblang)
+		if (chetchik > numblang)
 		{
 			cout << "OOPS" << endl;
 			continue;
@@ -217,7 +201,7 @@ int main()
 		{
 			nameLang.push_back(namelanguage);
 		}
-		for (auto i : nameLang)
+		for (auto &i : nameLang)
 		{
 			if (namelanguage == i)
 			{
@@ -230,47 +214,21 @@ int main()
 
 		number[chetchik][i] = namelanguage; // Строка начинается с одного ведь строка номер 0 занята именем человека, а номер столбца это номер человека который знает язык		
 
-
-
 		std::cout << "Do you want a countinue enter a name of lang, Yes = y, No = n" << endl;
 
-
-
 		cin >> b;
-
-
-
 		// повтор с помощью goto
-
-
 
 		if (b == 'y') {
 
-
-
 			goto tape;
-
-
-
 		}
 
-
-
-		if (b == 'n') {
-
-
-
-
-
-
-
+		else {
 		}
-
-
-
 	}
 	int chetchik = 0;
-	for (int i = 0; i <= nameLang.size(); i++)
+	for (int i = 0; i < nameLang.size(); i++)
 	{
 		chetchik = 0;
 		// При каждом прибавлении к i(индексу), мы обновляем счетчик
@@ -304,88 +262,13 @@ int main()
 
 	// Получаем незаполненую смежную матрицу
 	// Quant это ассоциативный массив
-
-	for (int i1 = 1; i1 <= numberpeople; i1++)
-	{
-		int costoftranslate = 0;
-		int namelang = 0;
-		int nametwomantwolang = 0;
-		for (int i2 = 1; i2 <= numblang; i2++)
-		{
-			for (int i3 = 2; i3 <= numberpeople; i3++)
-			{
-				for (int i4 = 1; i4 <= numblang; i4++)
-					// Заполняем частично матрицу смежности и оставшиеся значения заполняем (в другом цикле)
-				{
-					if (number[i2][i1] == number[i4][i3])
-					{
-						number[i2][i1] = quant[int(number[i2][i1])];
-						// Но что делать если значений одинаковых не нашлось
-						// придется позвать переводчика, но как это сделать
-						// И что делать когда значений несколько и как их сравнить
-					}
-					// Поиск перевода по наименьшей цене
-					else
-					{
-						nametwomantwolang = i3;
-						namelang = number[i2][i1];
-						// namelang имя языка для которого ищем наименьший 
-						for (int name = 1; name <= namelang; name++)
-						{
-							for (int icols = 1; icols <= numberpeople; icols++)
-							{
-								for (int irows = 1; irows <= numblang; irows++)
-								{
-									// Смотрим равен ли язык по которому мы итерируемся языку который нам нужен
-									// cost это цена перевода
-									// Смотрим ли есть ли такой язык в владение человека у которого мы ищем одинаковый язык(последний человек)
-									
-										if (number[icols][irows] == number[name][i2] && number[icols][irows] == number[i3][i4])
-										{
-										
-											// Если текущая цена больше чем цена обьекта по которому мы итерируемся
-											// То присваиваем нашей текущей цене значение цены объекта  по которому мы итерируемся
-											if (costoftranslate > quant[number[icols][irows]])
-											{
-												costoftranslate = quant[number[icols][irows]];
-											}
-											// Если значение по которому мы итерируемся то оставляем наше текущее значение
-											// И пропускаем ход
-											else
-											{
-												continue;
-											}
-											//if (irows == numblang && icols == numberpeople)
-											//{
-											//	number[i2][i1] = costoftranslate + quant[];
-											//}
-
-										}
-										/// Дописать конечный маршрут с 2 человека до 3.
-										/// 
-										/// Нужно дописать цикл в котором будет выбираться язык который выбрать для перевода с 2 человека до 3 человека
-								        /// И добавить Goto если больше 2 прослоек(между 1 и вторым человеком)	
-										/// То есть нам нужен опять же двойной цикл в котором будет искаться с помощью переменной nametwomantwolang
-										/// Найти язык  который мы будем использовать при конечном переводе с языка 2-3
-										/// Затем все цены стоимости переводов суммировать и это значение и будет являться именем ячейки человека номер 1
-									}
-								}
-							}
-					}
-				}
-			}
-		}
-		
-	}
-	
-	
 	// Мы заполнили матрицу
 
 	int start = 0;
 
 	int stop = 0;
 
-	cout << "Enter a number human(start of ZERO) for start";
+	std::cout << "Enter a number human(start of ZERO) for start";
 
 	cin >> start;
 
@@ -395,24 +278,13 @@ int main()
 
 	// Просим ввести старт и стоп для алгоритма дейкстра
 
-	for (int i1 = 0; i1 < numberpeople; i1++) {
-
+	for (int i1 = 0; i1 < numberpeople; i1++)
+	{
 		for (int i2 = 0; i2 < numblang; i2++)
-
-
-
 		{
-
-
-
-			cout << number[i1][i2]; // Печатаем матрицу
-
-
-
+			cout << std::setw(4) << number[i1][i2];
 		}
-
-
-
+		cout << endl;
 	}
 
 
@@ -450,5 +322,45 @@ int main()
 
 
 
+}
+void Arr(int** number, short int numblang, short int numberpeople, std::map<int, int>quant)
+{
+	using namespace std;
+
+
+	cout << number[1][1];
+	for (int i1 = 1; i1 <= numberpeople; i1++)
+	{
+		int costoftranslate = 0;
+		int namelang = 0;
+		int nametwomantwolang = 0;
+		for (int i2 = 1; i2 <= numblang; i2++)
+		{
+			for (int i3 = 2; i3 <= numberpeople; i3++)
+			{
+				for (int i4 = 1; i4 <= numblang; i4++)
+					// Заполняем частично матрицу смежности и оставшиеся значения заполняем (в другом цикле)
+				{
+					if (number[i2][i1] == number[i4][i3])
+					{
+						number[i2][i1] = quant[int(number[i2][i1])];
+						// Но что делать если значений одинаковых не нашлось
+						// придется позвать переводчика, но как это сделать
+						// И что делать когда значений несколько и как их сравнить
+					}
+					// Поиск перевода по наименьшей цене
+					else
+					{
+						nametwomantwolang = i3;
+						namelang = number[i2][i1];
+						//
+						// Ищем переводчиков рекурсивно
+					}
+				}
+			}
+		}
 	}
 }
+
+
+

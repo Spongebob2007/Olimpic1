@@ -1,7 +1,10 @@
 // Нужно дорешать задачу
 /// Ошибки это Vector subscript out of range
 /// Не отображаются полностью все имена людей(может быть переполнение буфера)
-
+// https://codeforces.com/gym/102375/problem/A
+// https://codeforces.com/gym/102330/problem/G
+// https://codeforces.com/contest/1237/problem/A
+// https://codeforces.com/contest/1221/problem/A
 
 #include <string>
 
@@ -25,6 +28,7 @@
 
 using namespace std;
 
+void(int **number,short int numblang,short int numberpeople);
 
 
 int main()

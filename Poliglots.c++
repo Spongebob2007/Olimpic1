@@ -201,7 +201,7 @@ int main()
 		{
 			nameLang.push_back(namelanguage);
 		}
-		for (auto &i : nameLang)
+		for (auto& i : nameLang)
 		{
 			if (namelanguage == i)
 			{
@@ -278,9 +278,9 @@ int main()
 
 	// Просим ввести старт и стоп для алгоритма дейкстра
 
-	for (int i1 = 0; i1 < numberpeople; i1++)
+	for (int i1 = 0; i1 <= numblang; i1++)
 	{
-		for (int i2 = 0; i2 < numblang; i2++)
+		for (int i2 = 1; i2 <= numberpeople; i2++)
 		{
 			cout << std::setw(4) << number[i1][i2];
 		}
@@ -361,6 +361,7 @@ void Arr(int** number, short int numblang, short int numberpeople, std::map<int,
 		}
 	}
 }
+
 
 
 

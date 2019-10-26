@@ -370,16 +370,17 @@ int Arr(int** number, short int numblang, short int numberpeople, int numb1, int
 		}
 	}
 	// Цена перевода равна последней и наименьшей цене перевода
-	cost = qunt;
+	cost = cost + qunt;
 	if (cost == 0)
 	{
 		return Arr(number, numblang, numberpeople, stolbf, numb2, quant, cost, strokf, stolbf);
+		// Рекурсией ищем значение, 
 	}
 	else 
 	{
 		return cost;
 	}
 }
-
+// проблема с рекурсией
 
 

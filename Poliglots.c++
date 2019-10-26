@@ -76,7 +76,7 @@ int main()
 
 	int b = numblang * 16;
 
-	number = new int* [t];
+	number = new int*[t];
 
 
 
@@ -323,45 +323,63 @@ int main()
 
 
 }
-void Arr(int** number, short int numblang, short int numberpeople, std::map<int, int>quant)
+
+int Arr(int** number, short int numblang, short int numberpeople, int numb1, int numb2, std::map<int, int>quant, int cost, int strok, int stolb)
 {
+	int strokf;
+	int stolbf;
 	using namespace std;
-
-
-	cout << number[1][1];
-	for (int i1 = 1; i1 <= numberpeople; i1++)
+	int qunt = 0;
+	for (int strok = 1; strok <= numblang; strok++) // Cтрока
 	{
-		int costoftranslate = 0;
-		int namelang = 0;
-		int nametwomantwolang = 0;
-		for (int i2 = 1; i2 <= numblang; i2++)
+		if (number[strok][numb1] == number[strok][numb2])
 		{
-			for (int i3 = 2; i3 <= numberpeople; i3++)
+			if (qunt > quant[(number[strok][numb1])]) // Если цена перевода меньше сейчашней, тогда обновляем переменную
 			{
-				for (int i4 = 1; i4 <= numblang; i4++)
-					// Заполняем частично матрицу смежности и оставшиеся значения заполняем (в другом цикле)
-				{
-					if (number[i2][i1] == number[i4][i3])
-					{
-						number[i2][i1] = quant[int(number[i2][i1])];
-						// Но что делать если значений одинаковых не нашлось
-						// придется позвать переводчика, но как это сделать
-						// И что делать когда значений несколько и как их сравнить
-					}
-					// Поиск перевода по наименьшей цене
-					else
-					{
-						nametwomantwolang = i3;
-						namelang = number[i2][i1];
-						//
-						// Ищем переводчиков рекурсивно
-					}
-				}
+				qunt = quant[(number[strok][numb1])];
 			}
 		}
 	}
-}
+	// Если одинаковых значений нет, ищем переводчика
+	if (qunt != 0 && cost == 0)
+	{
+		return qunt;
+	}
+	for (int stroka = 1; stroka <= numblang; stroka++)
+	{
+		for (int stolb = 1; stolb <= numberpeople; stolb++)
+		{
+			for (int strok = 1; strok <= numblang; strok++)
 
+			{
+				if (stolb == numb1 || stolb == numb2)
+				{
+					stolb++;
+				}
+				if (number[strok][stolb] == number[stroka][numb2])
+					{
+						if (qunt > quant[number[strok][stolb]])
+						{
+							qunt = quant[number[strok][stolb]];
+							stolbf = stolb;
+							strokf = strok;
+						}
+
+					}
+			}
+		}
+	}
+	// Цена перевода равна последней и наименьшей цене перевода
+	cost = qunt;
+	if (cost == 0)
+	{
+		return Arr(number, numblang, numberpeople, stolbf, numb2, quant, cost, strokf, stolbf);
+	}
+	else 
+	{
+		return cost;
+	}
+}
 
 
 

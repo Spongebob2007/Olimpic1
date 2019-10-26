@@ -1,0 +1,18 @@
+#include <string>
+
+#include <iostream>
+
+#include <bitset>
+using namespace std;
+
+int main()
+{
+	short int g;
+	cin >> g;
+	int b, n;
+	for (int i = 1; i < g; i++)
+	{
+		cin >> n;
+		cin >> b;
+	}
+}

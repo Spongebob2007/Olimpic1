@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	char non;
+	int sumh, sumw;
+	sumh = 0;
+	sumw = 0;
+	int h1, h2, w1, w2;
+	cin >> w1;
+	cin >> h1;
+	cin >> w2;
+	cin >> h2;
+	w1 >= w2 ? sumw = (((w1 + h1 + h2) * 2) + 4) : sumh = (((w2 + h1 + h2) * 2) + 4);
+	if (sumh == 0){cout << sumw;}
+	else {cout << sumh;}
+}

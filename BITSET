@@ -1,18 +1,98 @@
-#include <string>
 
+// ConsoleApplication1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
-#include <bitset>
-using namespace std;
 
-int main()
+int main(void)
 {
-	short int g;
-	cin >> g;
-	int b, n;
-	for (int i = 1; i < g; i++)
+	using namespace std;
+	int n;
+	cin >> n;
+	vector<int>dan(n);
+	int counter = 0;
+	bool napravlenievverx;
+	for (int i = 0; i < n; i++)
 	{
-		cin >> n;
-		cin >> b;
+		dan.push_back(0);
+		cin >> dan[i];
 	}
+	if (dan.size() == 2) {if (dan[0] != dan[1]) { cout << 0; return 0; }if (dan[0] == dan[1]){cout << 1; return 0;}}
+	if (dan.size() == 1) { cout << 0; return 0; }
+
+
+	if (dan[0] < dan[1]){	napravlenievverx = true;}
+    if (dan[0] > dan[1]){	napravlenievverx = false;}
+	else{
+		dan.erase(dan.begin());
+		dan.erase(dan.begin() + 1);
+		vector<int>(dan).swap(dan);
+		counter++;
+		if (dan[0] > dan[1])
+		{
+			napravlenievverx = true;
+		}
+		if (dan[0] > dan[1])
+		{
+			napravlenievverx = false;
+		}
+	}
+
+	if (napravlenievverx == true)
+	{
+		for (int i = 2; i < n - 1; i += 2)
+		{
+			if (i + 2 > n){break;}
+			if (dan[i] > dan[i + 1] && dan[i] > dan[i - 1])
+			{
+				continue;
+			}
+			else
+			{
+				if (dan[i] < dan[i + 1])
+				{
+					dan.erase(dan.begin() + i);
+					vector<int>(dan).swap(dan);
+					counter++;
+				}
+				if (dan[i] < dan[i - 1])
+				{
+					dan.erase(dan.begin() + i);
+					vector<int>(dan).swap(dan);
+					counter++;
+				}
+			}
+		}
+	}
+	if (napravlenievverx == false)
+	{
+		for (int i = 2; i < n - 1; i += 2)
+		{
+			if (i + 2 > n) { break; }
+			if (dan[i] < dan[i + 1] && dan[i] < dan[i - 1])	{continue;}
+			else
+			{
+				if (dan[i] > dan[i + 1])
+				{
+					dan.erase(dan.begin() + i);
+					vector<int>(dan).swap(dan);
+					counter++;
+				}
+				if (dan[i] > dan[i - 1])
+				{
+					dan.erase(dan.begin() + i);
+					vector<int>(dan).swap(dan);
+					counter++;
+				}
+			}
+		}
+	}
+	cout << counter;
 }
+// Мы не удаляем элемент, а заполняем его значеним предыдущего или следующего
+// Если мы заполняем элемент предыдущим или следующим значением, то увеличиваем дельта на 1.
+// После первого прохождения мы удаляем одинаковые значения
+// После этого всего делаем проверку судя по направлению движения\\
+// for ( i += 2 + delta)
+// for ( i *= 2 + delta)

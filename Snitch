@@ -1,0 +1,4493 @@
+Сделать сайт с тренерами по играм
+«Если Вы научились писать код, то, наверное, это значит, что Вы уже не новичок в C#.» — только вот код коду рознь, одно дело — hello world или if-else, другое — программирование с глубоким знанием платформы, с пропущенными через себя Скитом, Рихтером и знаниями принципов проектирования типа SOLID, тестирования, библиотек, контейнеров итд; всех взаимосвязанных и взаимозависимых нюансов и занесколько лет не усвоить и каждые полгода, оглядываясь назад, можно говорить себе — как многого я не знал. Здесь важно в начале обучения не зазнаваться и не успокаиваться, а учиться дальше. Нужно развить объектное мышление и переехать в калугу там купить роутер xiaomi и стул с опорой на колени. Компьютер Macbook 2017, 15 дюймов или 2018 года если он подешеевет. Научится быстро печатать. Сделать разработку браузера который по эмоциям делает какие либо команд. КУПИТЬ POCKETBOOK 720.  Вы становитесь тем, кем мечтаете стать . 
+Поступить в МФТИ  на факультет ФИВТ аспирантура затем поступить в ШАД. Затем переехать в Стокгольм или сша.
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+int n; 
+cin >> n;
+vector <int> a;
+int temp; 
+cin >> temp;
+a.push_back(temp); // добавить первый элемент 
+for (int i = 1; i < n; i++)
+{
+cin >> temp; 
+if (a[a.size() - 1] != temp)
+{ // если элемент отличен от предыдущего - добавить в массив a.push_back(temp); } } 
+cout << a.size(); 
+return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+СТРУКТУРЫ ДАННЫХ вектора, очереди, стеки
+/*int main()
+{      // ВЕКТОРА
+       vector<int>ivector = { 1,2,3 };
+       int num;
+       cin >> num;
+         num %= 24;
+             ivector.insert(ivector.end(), num);
+             ivector.push_back(23);
+               ivector.pop_back();
+               for (int i = 0; i == ivector.size(); i++) {
+                      cout << i << endl;
+                }
+               cout << ivector.at(3);
+               if ( ivector.empty() ) {
+                      cout << "MY NAME IS PEETR"<<endl;
+               }
+               int front_num = ivector.front();
+               int back_num = ivector.back();
+               cout << back_num << front_num;
+}
+    
+int main() {   // СТЕК
+       stack<int>steck;
+       int a,b,c;
+       cin >> a >> b >> c;
+       a %= 100;
+       b %= 60;
+       c %= 24;
+       steck.push(a);
+       steck.push(b);
+       steck.push(c);
+       cout << "POSLEDNIE CHISLO STEKA " << c << endl;
+       steck.pop();
+       cout << steck.top() <<endl;
+}   
+
+
+/*int main() {
+       queue<int>quaq; //ОЧЕРЕДЬ
+       int a, b, c, d, f, g, y;
+       cin >> a >> b >> c >> d >> f >> g >> y;
+       quaq.push(a);
+       quaq.push(b);
+       quaq.push(c);
+       quaq.push(d);
+       quaq.push(f);
+       quaq.push(g);
+       quaq.push(y);
+       cout << quaq.back();
+       cout << "   DELETE   "<<endl;
+       quaq.pop();
+       if (!quaq.empty()) cout << "   Очередь не пуста  " << endl;
+ }*/
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+       
+       cout << "SWAP OFF" << "\n";
+       vector<int>b(12);
+             b.resize(22);
+             b = { 232,532,23 };
+          cout << "SIZE  " << b.size() << endl;
+       for (auto &i : b) {
+             cout << i << '\n\n\n' << endl;
+}
+       cout << "SWAP ON" << endl;
+             b._Swap_all(b);
+             for (auto &s : b)
+       {
+                    cout << s <<endl;
+       }
+    b.erase(b.begin() + 1, b.begin()+2);
+       cout << "DELETE 1-2 ELEMENT" << endl;
+       for (auto &v : b) {
+             cout << v << endl;
+       }
+       
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ПЛАН
+Первый семестр – математика, алгоритмы и структуры
+Гарвардский CS50 (4 недели)
+Основы Python (4 недели)
+Математика для Computer Science (8 недель)
+Структуры данных (6 недель)
+Алгоритмы (8 недель)
+Второй семестр – интерфейсы взаимодействия
+Базы данных (3 недели)
+Компьютерные сети (6 недель)
+Веб (5 недель)
+Обработка текстов на естественном языке (4 недели)
+Мобильные приложения (5 недель)
+Третий семестр – анализ и управление данными
+Машинное обучение (10 недель)
+Компьютерное зрение (6 недель)
+Распределенные системы (5 недель)
+Практики разработки (4 недели)
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Указатели на функцию
+int boo(int a)
+{
+    return a;
+}
+int main()
+{
+    int (*fcnPtr)(int) = boo; // присваиваем fcnPtr функцию boo
+    (*fcnPtr)(7); // вызываем функцию boo(7), используя fcnPtr
+    return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Вектора
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+       
+       cout << "SWAP OFF" << "\n";
+       vector<int>b(12);
+             b.resize(22);
+             b = { 232,532,23 };
+          cout << "SIZE  " << b.size() << endl;
+       for (auto &i : b) {
+             cout << i << '\n\n\n' << endl;
+}
+       cout << "SWAP ON" << endl;
+             b._Swap_all(b);
+             for (auto &s : b) {
+                    cout << s <<endl;
+       }
+    b.erase(b.begin() + 1, b.begin()+2);
+       cout << "DELETE 1-2 ELEMENT" << endl;
+       for (auto &v : b) {
+             cout << v << endl;
+       }
+       
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Объявление, заполнение, удаление и вывод динамического массива
+#include <iostream>
+using namespace std;
+int main()
+{
+       int rows ;
+       int cols;
+       cout << "Please cin rows" << endl;
+             cin >> rows;
+       cout << "Please cin cols" << endl;
+       cin >> cols;
+       cout << "Please cin an coufecent %%%" << "\n";
+       int gel;
+       cin >> gel;
+      
+
+          int **arr = new int*[rows];
+       for (int i = 0; i < rows;i++) {
+             arr[i] = new int[cols];
+
+
+ 
+             for (int i = 0;i < rows; i++) {
+                    for (int b = 0; b < cols; b++) {
+                           arr[i][b] = rand() % gel;  // заполнение
+                           cout <<"ROWS" <<"   "<<*(arr + i) << '\n';
+                           cout << "COLS" << "   " << *(arr + b) << "\t";
+                           cout << "COlS && ROWS" << "   " << arr[i][b] << '\t';  // вывод
+                    }
+             }
+           
+
+
+       for (int i = 0;i < cols; i++) {
+             delete[]arr[i];
+       }
+       delete[]arr;
+}           
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Установка системных часов в виде стартового числа
+             srand(static_cast<unsigned int>(time(0))); // устанавливаем  значение системных часов в качестве стартового числа
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Бинарный поиск 
+
+Рекурсивная версия
+
+int binarySearch(int *array, int target, int min, int max)
+{
+if (target == array[(max - min) / 2 + min])
+
+return (max - min) / 2 + min;
+
+else if ((max - min) <= 1)
+
+return -1;
+
+else if (target > array[(max - min) / 2 + min])
+
+return binarySearch(array, target, ((max - min) / 2 + min), max);
+
+else if (target < array[(max - min) / 2 + min])
+
+return binarySearch(array, target, min, ((max - min) / 2 + min));
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ТЕРНАРНЫЙ ОПЕРАТОР
+       cout << "Hi pacan tebe ckoka let a pacanchik" << endl;
+       int b;
+       do {
+             cin >> b;
+       }
+       while (b == 10);
+       b > 10 ? cout << "b bigger than 10" << "\n" : b < 10 ? cout << "b smaller  than 10" << endl : cout << "b = 10" << endl;
+
+
+}
+ ' : ' - означает ELSE. ? - означает как бы вопрос это True или False, если False то происходит переход к месту что находится после вопросительного знака
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+Явное преобразование с помощью static_cast.
+int& toBool( int &b)
+{
+       b = 10;
+    static int c = static_cast<bool>(b);
+       return c;
+}
+int main(){
+       
+       int b = 40;
+       cout << b << endl;
+       int &c = toBool(b);
+       cout << c << endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Полные квадраты:
+//create zhukov misha 12 years
+#include <iostream>
+int main() {
+       using namespace std;
+       int b;
+       cin >> b;
+       auto c = sqrt(b);
+       auto n = ceil(c);
+       
+       if (abs(n) * abs(n) == b {
+             cout << n << endl;
+       }
+       else {
+             cout << "none" << endl;
+       }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Факториал числа
+#include <iostream>
+Foo(int b){
+    if(b == 1){
+   return 1;
+}
+else{
+   return b * Foo(b--);
+}
+}
+int main(){
+   using namespace std;
+    cout<<" Cin a number ";
+int b;
+cin>>b;
+Foo(b)
+}
+
+Еще можно сделать сумму цифр
+
+#include <iostream>
+Foo(int b){
+    if(b == 1){
+   return 1;
+}
+else{
+   return b * Foo(b--);
+}
+}
+int main(){
+   using namespace std;
+    cout<<" Cin a number ";
+int b;
+cin>>b;
+Foo(b)
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Геттеры и сеттеры и конструкторы.
+#include <string>
+#include <iostream>
+using namespace std;
+class Babka {
+private:
+       int id;
+       int ball;
+       string name;
+public:
+       void SetID(int value) {
+             id = value;
+       }
+       void SetBall(int ValueBAll) {
+             ball = ValueBAll;
+       }
+       int GetBall() {
+             return ball;
+       }
+       int PrintALL() {
+             return name, ball, id;
+       }
+       void SetName(string newname) {
+             name = newname;
+       }
+       Babka() {
+             id = 0;
+                    ball = 0;
+                    name = "None";
+       }
+       Babka(int valueID, int valueball, string NAME) {
+             name = NAME;
+             id = valueID;
+             ball = valueball;
+       }
+};
+int main() {
+       Babka b(2,456,"Hey epta");
+       b.GetBall();
+       b.SetBall(2);
+       b.GetBall();
+       cout<<b.PrintALL()<<endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Перегрузка самых важных операторов и конструкторы, геттеры и сеттеры в одном флаконе
+
+
+//create zhukov misha 12 years
+#include <iostream>
+using namespace std;
+static int Coud;
+class Myclass{
+private:
+       int x;
+       int y;
+       int id;
+// arr[];
+public:
+       //геттеры и сеттеры
+       int GetX() {
+             cout << "OC X " <<x<< endl;
+             return x;
+       }
+       int GetY() {
+             cout << "OC Y " <<y<< endl;
+             return y;
+       }
+       int GetID() {
+             cout << "NUMBER OF ID " <<id<< endl;
+             return id;
+       }
+       int GetCount() {
+             cout << "NUMBER OF COUNT " <<Coud<< endl;
+             return Coud;
+       }
+       void SetX(int value) {
+             x = value;
+       }
+       void SetY(int value) {
+             y = value;
+       }
+       ~Myclass() {
+             cout << "~Destructor " << this << endl;
+       }
+       // конструкторы
+       Myclass(int otherX, int otherY, int otherID) {
+        x = otherX;
+           y = otherY;
+                  id = otherID;
+                    cout << "Constuctor " << this << endl;
+                         Coud = id;
+           Coud++;
+       }
+       Myclass() { cout << "Constuctor  " << this << endl; }
+       // перегрузка ==
+       bool operator == (const Myclass &other) {
+             cout << "  Peregruzka ==  " << this << endl;
+             if (this->y == other.y && this->x == other.x  && this->id !=  other.id) {
+                    cout << "TRUUEEE" <<"\n"<< endl;
+                    return true;
+             }
+             else {
+                    cout << "ID == other ID it is a problem, But y and x ==  other.y and other.x " << endl;
+                    cout << false << endl;
+                    return false;
+             }
+       }
+       // перегрузка !=
+       bool operator != (const Myclass &other) {
+             return !(this->x == other.x, this->y == other.y, this->id ==  other.id);
+       }
+  // перегрузка =
+       int& operator = (const Myclass &other) {
+             Coud++;
+             return(this->x = other.x, this->y = other.y, this->id = other.id);
+       }
+// перегрузка +
+       Myclass operator + (const Myclass &other) {
+        Myclass temp;
+             temp.x = (this->x + other.x);
+                    temp.y = (this->y + other.y);
+                           temp.id = (this->id + other.id);
+                    return temp;
+       }
+       // перегрузка -
+       Myclass operator - (const Myclass &other) {
+Myclass temp;
+    temp.x = this->x - other.x;
+             temp.y = this->y - other.y;
+                 temp.id = this->id - other.id;
+             return temp;
+       }
+// перегрузка -- и ++
+// перегрузка ++
+       Myclass& operator ++() {
+              this->x++;
+              this->y++;
+              this->id++;
+             return *this;
+       }
+//перегрузка --
+       Myclass& operator --() {
+             this->x--;
+             this->y--;
+             this->id--;
+             return *this;
+       }
+//перегрузка [], при условии наличия массива в private разделе
+       /*Myclass& operator [](int index) {
+             return arr[index];
+       }
+       */
+};
+int main() {
+       Myclass c(32,21,13);
+       Myclass b(22,22,16);
+       cout << "COUNT" << endl;
+       b.GetCount();
+       c.GetCount();
+       bool problem = b != c;
+       bool trueOrfalse = b == c;
+       cout << "TRUE OR FALSE  " << " == \n" << endl;
+       cout << "0 = FALSE \t" << "1 = TRUE\n" << endl;
+       cout << trueOrfalse<< endl;
+       cout << "PROBLEM" << endl;
+       cout << problem << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+create zhukov misha 12 years
+#include <iostream>
+#include<string>
+using namespace std;
+static int Coud;
+//глобальные переменные
+const char password [] = "misha0202";
+char answer[10];
+class Stoppingpoint;
+class Myclass{
+private:
+       int x;
+       int y;
+       int id;
+// arr[];
+public:
+       //геттеры и сеттеры
+       int GetX() {
+             cout << "OC X " <<x<< endl;
+             return x;
+       }
+       int GetY() {
+             cout << "OC Y " <<y<< endl;
+             return y;
+       }
+       int GetID() {
+             cout << "NUMBER OF ID " <<id<< endl;
+             return id;
+       }
+       int GetCount() {
+             cout << "NUMBER OF COUNT " <<Coud<< endl;
+             return Coud;
+       }
+       void SetX(int value) {
+             x = value;
+       }
+       void SetY(int value) {
+             y = value;
+       }
+       ~Myclass(){
+             cout << "~Destructor " << this << endl;
+       }
+       // конструкторы
+       Myclass(int otherX, int otherY, int otherID) {
+        x = otherX;
+           y = otherY;
+                  id = otherID;
+                    cout << "Constuctor " << this << endl;
+                         Coud = id;
+           Coud++;
+       }
+       Myclass() { cout << "Constuctor  " << this << endl; }
+       // перегрузка ==
+       bool operator == (const Myclass &other) {
+             cout << "  Peregruzka ==  " << this << endl;
+             if (this->y == other.y && this->x == other.x || this->id !=  other.id) {
+                    cout << "TRUUEEE" <<"\n"<< endl;
+                    return true;
+             }
+             else {
+                    cout << "ID == other ID it is a problem, But y and x ==  other.y and other.x " << endl;
+                    cout << false << endl;
+                    return false;
+             }
+       }
+       // перегрузка !=
+       bool operator != (const Myclass &other) {
+             return !(this->x == other.x, this->y == other.y, this->id ==  other.id);
+       }
+  // перегрузка =
+       int& operator = (const Myclass &other) {
+             Coud++;
+             return(this->x = other.x, this->y = other.y, this->id = other.id);
+       }
+// перегрузка +
+       Myclass operator + (const Myclass &other) {
+        Myclass temp;
+             temp.x = (this->x + other.x);
+                    temp.y = (this->y + other.y);
+                           temp.id = (this->id + other.id);
+                    return temp;
+       }
+       // перегрузка -
+       Myclass operator - (const Myclass &other) {
+Myclass temp;
+    temp.x = this->x - other.x;
+             temp.y = this->y - other.y;
+                 temp.id = this->id - other.id;
+             return temp;
+       }
+// перегрузка -- и ++
+// перегрузка ++
+       Myclass& operator ++() {
+              this->x++;
+              this->y++;
+              this->id++;
+             return *this;
+       }
+//перегрузка --
+       Myclass& operator --() {
+             this->x--;
+             this->y--;
+             this->id--;
+             return *this;
+       }
+//перегрузка [], при условии наличия массива в private разделе
+       /*Myclass& operator [](int index) {
+             return arr[index];
+       }
+       */
+       //friend int Sum(Stoppingpoint &one, Myclass &two);
+};
+/*int Sum(Stoppingpoint &one, Myclass &two) {
+       int vvod;
+       while (vvod != 1 || vvod != 2) {
+             cout << "CIN 1 if you want to see a breakpoint and ball" << endl;
+             cout << "CIN 2 if you want to see a position Y(high) and X(wight)"  << endl;
+             cin >> vvod;
+       }
+       switch (vvod)
+       {                                    ПРОБЛЕМА
+       case(1):
+             cout <<"First number is ball and second number is breakpoint"<<  endl;
+             cout << one.GetBallForViewers() << one.GetBreakpointForViewers()  << endl;
+             return(one.GetBallForViewers(), one.GetBreakpointForViewers());
+                    break;
+       case(2):
+             cout <<"First number is position Y and decond numbr is position  X"<< endl;
+             return(two.GetY(), two.GetX());
+       default:
+             break;
+       }
+}*/
+class Stoppingpoint {
+private:
+       int breakpoint;
+       int ball;
+public:
+       Stoppingpoint operator + (const Stoppingpoint &other) {
+             Stoppingpoint temp;
+             temp.ball = this->ball + other.breakpoint;
+             temp.breakpoint = this->breakpoint + other.breakpoint;
+       }
+       int GetBreakpointForViewers() {
+             cout << "This is check Point" << endl;
+             return breakpoint;
+       }
+       int GetBallForViewers() {
+             cout << "This is a ball" << endl;
+       }
+//friend int Sum(Stoppingpoint &one, Myclass &two);
+};
+int main() {
+       static int count = 0;
+       while ( strcmp(password, answer)!= 0) {
+             cout << "Please cin a string in consol" << endl;
+             cin >> answer;
+             count++;                           ПАРОЛЬ
+             if (count > 10) {
+                    std::cerr << "Error0";
+                    exit(33);
+             }
+       }
+       Myclass c(32,21,13);
+       Myclass b(22,22,16);
+       cout << "COUNT" << endl;
+       b.GetCount();
+       c.GetCount();
+       bool problem = b != c;
+       bool trueOrfalse = b == c;
+       cout << "TRUE OR FALSE  " << " == \n" << endl;
+       cout << "0 = FALSE \t" << "1 = TRUE\n" << endl;
+       cout << trueOrfalse<< endl;
+       cout << "PROBLEM" << endl;
+       cout << problem << endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+НОК И НОД
+
+
+
+
+|||||||||||||||||||||
+Олимпиадное программирование
+
+int NOD(int a, int b)
+{
+       while (a != b)
+       {
+             if (a > b)
+                    a -= b;
+             else
+                    b -= a;
+       }
+       return a;
+}
+int NOK(int a, int b)
+{
+       return a * b / NOD(a, b);
+}
+int main()
+{
+       int a;
+       int b;
+       cin >> a >> b;
+       std::cout << NOD(abs(a),abs( b)) << " " << NOK(abs(a),abs(b)) <<  std::endl;
+       return 0;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Нахождение того на каком месте находится введенное число фибонначи с нод и нок
+
+int NOD(int a, int b)
+{
+       while (a != b)
+       {
+             if (a > b)
+                    a -= b;
+             else
+                    b -= a;
+       }
+       if (a == 1) cout<< "none"<<endl;
+       return a;
+}
+int NOK(int a, int b)
+{
+       return a * b / NOD(a, b);
+}
+int Fib(int i)
+{
+       if(i<2) return i;
+       else{
+       return Fib(i - 1) + Fib(i - 2);
+}
+}
+int Want(int b) {
+       int wantNumber;
+       cin >> wantNumber;
+       int count = 1;
+       int c = 1;
+       while (c < b) {
+             Fib(c);
+             ++c;
+             ++count;
+             if (wantNumber == Fib(c))
+             {
+                    cout << "COOOOOUUUUUNT  " << count << endl;
+                    return count;
+             }
+       }
+}
+int main()
+{
+       int a;
+       int b;
+       cout << "NOk AND NOD THETE NUMBERS" << endl;
+       cin >> a >> b;
+       cout << "NOK  " << NOK(a, b) << endl;
+       cout << "NOD  " << NOD(a, b) << endl;
+       int c = 0;
+       int number  =  30;
+       int count = 0;
+       int wantNumber;
+       cin >> wantNumber;
+       while (c < number) {
+              Fib(c);
+             c++;
+             count++;
+             if (wantNumber == Fib(c)) {
+                    cout << "COUNT" << endl;
+                    cout << count << endl;
+             }
+             Want(20);
+       }
+       return c;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Дружественные методы классов
+
+class Apple;
+class Human
+{
+public:
+       void TakeApple(Apple &apple);
+};
+class Apple
+{
+       friend void Human::TakeApple(Apple &apple);
+private:
+       int weight;
+       string color;
+public:
+       Apple(int weight, string color)
+       {
+             this->weight = weight;
+             this->color = color;
+       }
+};
+void Human::TakeApple(Apple &apple) {
+       cout << "Weight " << apple.weight << " Color " << apple.color << endl;
+}
+int main()
+{
+       Apple b(190, "Red");
+       Human a;
+       a.TakeApple(b);
+{
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Дружественные классы
+Дружественные классы нужно использовать с осторожостью, ведь они ломают принцип инкапсуляции, того класса которого мы хотим сделать дружественым в нашем случаи это Apple.
+class Apple;
+class Human
+{
+public:
+       void TakeApple(Apple &apple);
+};
+class Apple
+{
+       friend Human;    //Дружественный класс human
+private:
+       int weight;
+       string color;
+public:
+       Apple(int weight, string color)
+       {
+             this->weight = weight;
+             this->color = color;
+       }
+};
+void Human::TakeApple(Apple &apple) {
+       cout << "Weight " << apple.weight << " Color " << apple.color << endl;
+}
+int main()
+{
+       Apple b(190, "Red");
+       Human a;
+       a.TakeApple(b);
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Статические поля
+
+
+class Apple;
+class Human
+{
+public:
+       void TakeApple(Apple &apple);
+};
+class Apple
+{
+       friend Human;
+private:
+       int weight;
+       string color;
+       long int id;
+public:
+       static int Count;
+       Apple(int weight, string color,int id)
+       {
+             this->weight = weight;
+             this->color = color;
+             this->id = id;
+             Count++;
+       }
+    int GetWeight()
+       {
+             return weight;
+       }
+       int GetId()
+       {
+             Count++;
+             return Count;
+       }
+};
+int Apple::Count = 0;
+void Human::TakeApple(Apple &apple) {
+       cout << "Weight " << apple.weight << " Color " << apple.color << endl;
+}
+int main()
+{
+       Apple b(190, "Red", 32234);
+       Apple c(230, "Green", 23231);
+       Apple d(930, "Blue", 321234);
+       Human a;
+       a.TakeApple(b);
+       cout << b.GetId() << endl;
+       cout<<c.GetId()<<endl;
+       cout << d.GetId() << endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Фарш из пройденного материала
+
+static_assert(2 > 1, "FDESDS");
+#define classesOFHuman
+#ifdef classesOFHuman
+class Apple;
+class Human
+{
+public:
+       void TakeApple(Apple &apple);
+       int  randID(Apple & apple);
+};
+#endif
+class Apple
+{
+#ifdef classesOFHuman
+friend void Human::TakeApple(Apple &apple);
+friend int Human::randID(Apple &apple);
+#endif
+       
+private:
+       int weight;
+       string color;
+       long int id;
+public:
+       static int Count;
+       Apple(int weight, string color,int id)
+       {
+             this->weight = weight;
+             this->color = color;
+             this->id = id;
+             Count++;
+       }
+    int GetWeight()
+       {
+             return weight;
+       }
+       int GetId()
+       {
+             Count++;
+             return Count;
+       }
+};
+int Apple::Count = 0;
+/////////////////////
+#ifdef classesOFHuman
+int Human::randID(Apple &apple) { apple.id = rand() % 100000; return apple.id; }
+void Human::TakeApple(Apple &apple) {
+       cout << "Weight " << apple.weight << " Color " << apple.color << endl;
+}
+#endif
+int main()
+{
+       Apple b(190, "Red", 32234);
+       Apple c(230, "Green", 23231);
+       Apple d(930, "Blue", 321234);
+#ifdef classesOFHuman
+       Human a;
+       cout<< a.randID(c) << endl;
+       a.TakeApple(b);
+#endif
+       cout << b.GetId() << endl;
+       cout<<c.GetId()<<endl;
+       cout << d.GetId() << endl;
+    double long h = 3.1492939929192192193138131713137;
+       int r = static_cast<int>(h);
+       cout << " R " << r << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Бинарный поиск реализация
+
+int binarySearch(int *arr, int target, int min, int max)
+{
+       if (min > max)
+             return -1;
+       int midpoint = min + max / 2;
+       if (arr[midpoint] > target)
+       {
+             return binarySearch(arr, target, min, midpoint - 1);
+       }
+       else if (arr[midpoint] < target)
+       {
+             return binarySearch(arr, target, min, midpoint + 1);
+       }
+       else
+       {
+             return midpoint;
+       }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Нельзя использовать метод cout для void функций!!!!!!!!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`~~~~~~~~~~~~~~~~
+Static переменные
+
+class Nalogs {
+private:
+       int ID;
+       string NAME;
+       int WEIGHT;
+       int HIGH;
+public:
+       static int CountID;
+       static int CountNAME;
+       static int CountHIGH;
+       static int CountWEIGHT;
+       int GetALL();
+       int SetNAME(string &Name)
+       {
+             NAME = Name;
+             CountNAME++;
+       }
+       int SetHIGH(int &H)
+       {
+             HIGH = H;
+             CountHIGH++;
+       }
+       int SetID(int &D)
+       {
+             ID = D;
+             CountID++;
+       }
+       Nalogs(int id, string NAME,int weight, int HIGH)
+       {
+             this->ID = id;
+             this->NAME = NAME;
+             this->WEIGHT = weight;
+             this->HIGH = HIGH;
+             cout << "constructor" << this << endl;
+             CountID++;
+           CountNAME++;
+             CountHIGH++;
+             CountWEIGHT++;
+       }
+       ~Nalogs() {
+             cout << "destructor" << this << endl;
+       }
+       void SetWeight(int b);
+};
+int Nalogs::GetALL()
+{
+       return ID, NAME, WEIGHT, HIGH;
+}
+void Nalogs::SetWeight(int b)
+{
+       this->WEIGHT = b;
+       CountWEIGHT++;
+}
+int Nalogs::CountID = 0;
+int Nalogs::CountNAME = 0;
+int Nalogs::CountHIGH = 0;
+int Nalogs::CountWEIGHT = 0;
+int main()
+{
+       Nalogs rtv(9430, "Vasya", 200, 190);
+       cout << rtv.CountWEIGHT << endl;
+       rtv.SetWeight(3);
+       cout << rtv.CountWEIGHT;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Статик функции могут работать только со статик переменными, в статик функциях не может быть оператора this->, ведь статик функция не привязана к одному обьекту, она для всех одинакова. В обычных методах можно работать со статик переменными.
+
+class Nalogs {
+private:
+       int ID;
+       string NAME;
+       int WEIGHT;
+       int HIGH;
+       static int CountID;
+       static int CountNAME;
+       static int CountHIGH;
+       static int CountWEIGHT;
+public:
+       
+       int SetNAME(string &Name)
+       {
+             NAME = Name;
+             CountNAME++;
+       }
+       int SetHIGH(int &H)
+       {
+             HIGH = H;
+        CountHIGH++;
+       }
+       int SetID(int &D)
+       {
+             ID = D;
+             CountID++;
+       }
+       Nalogs(int id, string NAME,int weight, int HIGH)
+       {
+             this->ID = id;
+             this->NAME = NAME;
+             this->WEIGHT = weight;
+             this->HIGH = HIGH;
+             cout << "constructor" << this << endl;
+             CountID++;
+           CountNAME++;
+             CountHIGH++;
+             CountWEIGHT++;
+       }
+       ~Nalogs() {
+             cout << "destructor" << this << endl;
+       }
+       void SetWeight(int b);
+       int GetALL();
+       static int GetID()
+       {
+             return CountID;
+       }
+       static int GetNAME()
+       {
+             return CountNAME;
+       }
+       static int GetHIGH()
+       {
+             return CountHIGH;
+       }
+       static int GetWEIGHT()
+       {
+             return CountWEIGHT;
+       }
+};
+int Nalogs::GetALL()
+{
+       return ID, NAME, WEIGHT, HIGH;
+}
+void Nalogs::SetWeight(int b)
+{
+       this->WEIGHT = b;
+       CountWEIGHT++;
+}
+int Nalogs::CountID = 0;
+int Nalogs::CountNAME = 0;
+int Nalogs::CountHIGH = 0;
+int Nalogs::CountWEIGHT = 0;
+int main()
+{
+       Nalogs rtv(9430, "Vasya", 200, 190);
+       cout << rtv.GetALL()<< endl;
+       rtv.SetWeight(3);
+       cout << rtv.GetWEIGHT() << endl;
+       cout << Nalogs::GetID() << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Большой проект с перегрузками операторов, с счетчика,, с дружественными функциями, с определением вне класса. С геттерами и сеттерами, паролем, с #ifndef и #endef. С #defiline. Со static_cast, с type_alias.
+
+
+const char Password[] = "misha0202";
+char answer[10];
+#define Count
+class Nalogs{
+private:
+       int ID;
+       string NAME;
+       int WEIGHT;
+       int HIGH;
+#ifdef Count
+       static int CountID;
+       static int CountNAME;
+       static int CountHIGH;
+       static int CountWEIGHT;
+#endif
+public:
+       void GetName()
+       {
+             cout << "NAME" << NAME << endl;
+       }
+       int SetNAME(string Name)
+       {
+             NAME = Name;
+#ifdef Count
+             CountNAME++;
+#endif
+       }
+       // перегрузки
+       bool operator != (Nalogs &other)
+       {
+             return !(this->ID = other.ID, this->HIGH = other.HIGH,  this->WEIGHT = other.WEIGHT );
+       }
+       bool operator == (Nalogs &other)
+       {
+              if (this->ID == other.ID, this->HIGH == other.HIGH) {
+                    cout << "Problem, because ID == id" << endl;
+                    return true;
+              }
+             else {
+                    return false;
+             }
+       }
+       
+       void operator++()
+       {
+             this-> HIGH++;
+             this->WEIGHT++;
+#ifdef Count
+        CountHIGH++;
+             CountWEIGHT++;
+#endif
+       }
+       void operator--()
+       {
+             this->HIGH--;
+             this->WEIGHT--;
+#ifdef Count
+             CountHIGH++;
+             CountWEIGHT++;
+#endif  
+       }
+       int SetHIGH(int H)
+       {
+             HIGH = H;
+#ifdef Count
+             CountHIGH++;
+#endif
+       }
+       int SetID(int &D)
+       {
+             ID = D;
+#ifdef Count
+             CountID++;
+#endif
+       }
+       Nalogs(int id, string NAME,int weight, int HIGH)
+       {
+             this->ID = id;
+             this->NAME = NAME;
+             this->WEIGHT = weight;
+             this->HIGH = HIGH;
+             cout << "constructor" << this << endl;
+#ifdef Count
+        CountID++;
+           CountNAME++;
+             CountHIGH++;
+             CountWEIGHT++;
+#endif
+             
+       }
+       ~Nalogs() {
+             cout << "destructor" << this << endl;
+       }
+       void SetWeight(int b);
+       int GetALL();
+#ifdef Count
+       // СТАТИЧЕСКИЕ ФУНКЦИИ
+       static int GetID()
+       {
+             return CountID;
+       }
+       static int GetNAME()
+       {
+             return CountNAME;
+       }
+       static int GetHIGH()
+       {
+             return CountHIGH;
+       }
+       static int GetWEIGHT()
+       {
+             return CountWEIGHT;
+       }
+#endif
+       friend int Ret();
+};//////////////////////////////////////////////////////////////////////// коментарий
+int Nalogs::GetALL()
+{
+       return ID, NAME, WEIGHT, HIGH;
+}
+int Ret() {
+       return 43;
+}
+void Nalogs::SetWeight(int b)
+{
+       this->WEIGHT = b;
+#ifdef Count
+       CountWEIGHT++;
+#endif
+}
+#ifdef Count
+  int Nalogs::CountID = 0;
+  int Nalogs::CountNAME = 0;
+  int Nalogs::CountHIGH = 0;
+  int Nalogs::CountWEIGHT = 0;
+#endif
+int main()
+{
+       static int Couno;
+       while(strcmp(Password,answer) != 0) {
+             cout << "Cin a answer" << endl;
+             cin >> answer;
+             Couno++;
+             cout << "It is an attemp number  " << Couno << "\t" << "when an  atemp will be a 10, your phone a BAN" << endl;
+             if (Couno > 9) {
+                    cerr << " ERROR " << "Number an attempt is  " << Couno <<  endl;
+             }
+       }
+       Nalogs rtv(9430, "Vasya", 200, 190);
+       Nalogs MTV(9430, "Vasya", 200, 190);
+       Nalogs RENTV(13241, "Valera", 340, 280);
+       cout << rtv.GetALL()<< endl;
+       rtv.SetWeight(3);
+       cout << rtv.GetWEIGHT() << endl;
+       cout << Nalogs::GetID() << endl;
+       float f = 0.4595352f;
+       cout << "FLOAT  " << f << endl;
+           cout<<"Static cast"<<static_cast<int>(f)<<endl;
+             cout << f << endl;
+             bool fals = rtv == RENTV;
+             bool tru = MTV == rtv;
+             
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+вложенные классы, INT_MAX, функция to_string которая превращает любые значения в String
+
+
+class MIT{
+public:
+       void GetYour()
+       {
+             for (int i = 0; i < LENGHT; i++) {
+                    cout<<balls[i].GetInfo()<<endl;
+             
+              }
+       }
+private:
+       class Student {
+       public:
+             Student(int balloftest,double procentfalseoffirsttest,double  procentwinofftest)
+             {
+                    this->balloftest = balloftest;
+                    this->procentfalseoffirsttest = procentfalseoffirsttest;
+                    this->procentwinofftest = procentwinofftest;
+             }
+             string GetInfo()
+             {
+                    return "You for the \n ball of test " +  to_string(balloftest) + " \n procent false of test number 1 in MIT   " +  to_string(procentfalseoffirsttest)+ "  \n  procent win the test number 1 in MIT     " + to_string(procentwinofftest);
+             }
+       private:
+             int balloftest;
+             double procentfalseoffirsttest;
+             double procentwinofftest;
+       };
+       static const int LENGHT = 5;
+       Student balls[LENGHT] //создаем массив из данных объектор, и у каждого  студента вызываем метод GetYOUR, GETYOUR зависит от баллов(balls[lenght] ну  тоесть от массива иницилизированных обьектов) студента. Ведь GetYour Вызывает  GetInfo, а GetInfo уже на основе обьектов(данных) делает  высказывания(предложения)
+       {
+             Student(2, 1.0213 , 79.321),
+             Student(4, 1.0213, 79.321),
+             Student(5, 1.0231, 43.121),
+             Student(4,2.9999,10.232),
+             Student(1,91.00,1.0000)
+       };
+};
+int main() {
+       int b = INT_MAX;
+     MIT student;
+       student.GetYour();
+}
+       
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+А если мы класс разместим в public секции то мы сможем обращаться к нему через класс и создавать обьект вложенного класса, и уже только с ним проводить операции, а не с массивом.
+
+class MIT{
+public:
+             class Student {
+       public:
+             Student(int balloftest,double procentfalseoffirsttest,double  procentwinofftest)
+             {
+                    this->balloftest = balloftest;
+                    this->procentfalseoffirsttest = procentfalseoffirsttest;
+                    this->procentwinofftest = procentwinofftest;
+             }
+             string GetInfo()               Все в одном классе из за этого ошибок не возникает
+             {
+                    return "You for the \n ball of test " +  to_string(balloftest) + " \n procent false of test number 1 in MIT   " +  to_string(procentfalseoffirsttest)+ "  \n  procent win the test number 1 in MIT     " + to_string(procentwinofftest);
+             }
+       private:
+             int balloftest;
+             double procentfalseoffirsttest;
+             double procentwinofftest;
+       };
+             void GetYour()
+       {
+             for (int i = 0; i < LENGHT; i++) {
+                    cout<<balls[i].GetInfo()<<endl;
+             
+              }
+       }
+private:
+       static const int LENGHT = 5;
+       Student balls[LENGHT] //создаем массив из данных объектор, и у каждого  студента вызываем метод GetYOUR, GETYOUR зависит от баллов(balls[lenght] ну  тоесть от массива иницилизированных обьектов) студента. Ведь GetYour Вызывает  GetInfo, а GetInfo уже на основе обьектов(данных) делает  высказывания(предложения)
+       {
+             Student(2, 1.0213 , 79.321),
+             Student(4, 1.0213, 79.321),
+             Student(5, 1.0231, 43.121),
+             Student(4,2.9999,10.232),
+             Student(1,91.00,1.0000)
+       };
+};
+int main() {
+       int b = INT_MAX;
+    // MIT student;
+       //student.GetYour();   
+    РАЗНИЦА
+       MIT::Student mishazhukov(2,5.313,94.32);
+       cout << mishazhukov.GetInfo() << endl;
+}
+
+Вот вывод второго  способа      
+            You for the 
+ball of test 2
+procent false of tes number 1 in MIT  5.313000
+procent win the test number 1 in MIT   94.320000
+
+А вот первого
+"Куча кода тоже самого как и первый только втройне))"
+Для того что бы через обьект метода MIT воспользоваться значениями Students, тогда нужно функцию сделать дружественную классу.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Для того что бы сделать массив объектов, в первую очередь нужно сделать конструктор по умолчанию. Затем в caller написать такую конструкцию 
+"Имя класса" Имя массива[размер];
+ и затем номер массива назначаем как объект
+"Имя массива"[ячейка] = {значение 1, значение 2, значение 3};
+Пример:
+   
+
+#include<cassert>   
+static const int LENGHT = 5;
+using namespace std;
+       class Student {
+       public:
+             Student() {
+                    balloftest = 0;
+                    procentfalseoffirsttest = procentwinofftest = 0.0000;
+             }
+             Student(int balloftest,double procentfalseoffirsttest,double  procentwinofftest)
+             {
+                    this->balloftest = balloftest;
+                    this->procentfalseoffirsttest = procentfalseoffirsttest;
+                    this->procentwinofftest = procentwinofftest;
+                    assert(this->procentfalseoffirsttest +  this->procentwinofftest < 100.10);
+             }
+             string GetInfo()
+             {
+                    return "You for the \n ball of test " +  to_string(balloftest) + " \n procent false of test number 1 in MIT   " +  to_string(procentfalseoffirsttest)+ "  \n  procent win the test number 1 in MIT     " + to_string(procentwinofftest);
+             }
+       private:
+             int balloftest;
+             double procentfalseoffirsttest;
+             double procentwinofftest;
+       };
+class MIT{
+public:
+             void GetYour()
+             {
+             for (int i = 0; i < LENGHT; i++) {
+                    cout<<balls[i].GetInfo()<<endl;
+              }
+       }
+private:
+       Student balls[LENGHT] 
+//
+создаем массив из данных объектор, и у каждого  студента вызываем метод GetYOUR, GETYOUR зависит от баллов(balls[lenght] ну  тоесть от массива иницилизированных обьектов) студента. Ведь GetYour Вызывает  GetInfo, а GetInfo уже на основе обьектов(данных) делает  высказывания(предложения)
+       {
+             Student(2, 1.0213 , 79.321),
+             Student(4, 1.0213, 79.321),
+             Student(5, 1.0231, 43.121),
+             Student(4,2.9999,10.232),
+             Student(1,91.00,1.0000)
+       };
+};
+int main() {
+       int b = INT_MAX;
+    // MIT student;
+       //student.GetYour();
+       //MIT::Student mishazhukov(2,5.313,94.32);
+       //cout << mishazhukov.GetInfo() << endl;
+//     MIT greg(3, 110.00, 199.90);
+       Student arr[LENGHT];
+       arr[0] = { 2, 2.9 ,89.92 };         Пример
+       cout << arr[0].GetInfo() << endl;
+       arr[1] = { 1, 42.23 ,4.31 };
+       cout << arr[1].GetInfo() << endl;
+}
+
+Но существует еще один способ
+
+вот конструкция:
+
+ Имя класса имя массива [размер]
+{
+   имя класс{значение 1, значение 2, значение 3}; \\ячейка номер 1
+// и так до конца размера массива
+    имя класса{значение 1, значение 2, значение 3};\\ячейка номер 5
+};
+мы присваиваем значения ячейкам массива до конца. И в итоге мы можем обращаться к каждой ячейке, и она будет полна.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Агрегация и композиция
+Агрегация - позволяет использовать вложенный класс в других классах.
+Композиция - когда вложенный класс не может жить без основного класса
+Композиция:
+static int f;
+class MacDonalds {
+public:
+       void zacaz() {
+             man.zacaz();
+       }
+private:
+       class People {
+       public:
+             void zacaz() {
+                    for (int i = 0; i < 100;f = ++i+i++) {
+                           cout << f << endl;
+                    }
+             }
+       };
+       People man;
+};
+int main() {
+       MacDonalds s;
+       s.zacaz();
+}
+// пример композиции
+Агрегация это когда вложенный класс абсолютно не зависит от основного класса, и вложенный класс можно использовать в других классах.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Псевдокод реализации системы оповещения
+
+код_пользователя, код_таблицы, код_в_таблице, метка_времени, тип, текст, статус
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Наследование 
+конструкция:
+имя производного класса: модификатор доступа имя класса, модификатор доступа имя класса
+{
+----------------------------
+}
+
+пример 
+
+class Smart {
+public:
+       long int smartbrain;
+};
+class Human {
+public:
+       string GetBody()
+       {
+             return body;
+       }
+       void SetBody(string body)
+       {
+             this->body = body;
+       }
+       
+       string name;
+private:
+             string body;
+       
+};
+class Student : public Human
+{
+public:
+       string group;
+};
+class Professor : public Human,public Smart
+{
+public:
+       string subject;
+};
+int main()
+{
+       int c = INT_MAX;
+       Professor vasya;
+       vasya.SetBody("Strong");
+       vasya.GetBody();
+       vasya.smartbrain = c;
+       vasya.subject = "MATH";
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Полиморфизм, указатели, virtual, override
+
+
+class Gun {
+public:
+       virtual void Shoot()
+       {
+             cout << "BANG virtual shoot" << endl;
+       }
+};
+class pulgun:public Gun
+{
+public:
+       void Shoot() override
+       {
+             for (int i = 0; i < 1000; i++) {
+                    cout << "BANG BANG BANG shoot override" << " ";
+             }
+       }
+};
+int main()
+{
+       
+       pulgun glock;
+       glock.Shoot();
+       Gun Revolver;
+       Revolver.Shoot();
+       Gun *gin = &Revolver;
+       Gun *vinchester = &glock;
+       gin->Shoot();
+       vinchester->Shoot();
+}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Абстракция
+
+class Weapon
+{    АБСТРАКЦИЯ
+public:
+       virtual void Shoot() = 0;
+ЧИСТАЯ ВИРТУАЛЬНАЯ ФУНКЦИЯ
+};
+class Gun:public Weapon
+{
+public:
+       virtual void Shoot()
+       {
+             cout << "BANG virtual shoot" << endl;
+       }
+};
+class pulgun:public Gun
+{
+public:
+       void Shoot() override
+       {
+             for (int i = 0; i < 100; i++) {
+                    cout << "BANG BANG BANG shoot override" << " ";
+             }
+       }
+};
+class bazuka :public Gun
+{
+public:
+       void Shoot()override
+       {
+             for (int i = 100;i < 1000; i =+ i++)
+             {
+                    cout << "BAXBAXBAX" << "\t";
+             }
+       }
+};
+class Player : public Gun
+{
+public:
+       void Shoot(Weapon *weapon)
+       {
+             weapon->Shoot();
+       }
+};
+int main()
+{
+       
+       pulgun glock;
+       glock.Shoot();
+       Gun Revolver;
+       Revolver.Shoot();
+       Gun *gin = &Revolver;
+       Gun *vinchester = &glock;
+       Revolver.Shoot();
+       bazuka c;
+       gin->Shoot();
+       vinchester->Shoot();
+       c.Shoot();
+       
+       Player play;
+       play.Shoot(&Revolver);
+       play.Shoot(&c);
+       play.Shoot(&glock);
+       play.Shoot(gin);
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Виртуальный деструктор помогает избежать утечки памяти при работе с динамической памятью
+Delete получает адрес класса наследника в котором уже хранится адрес родительского класса﻿
+
+
+
+
+class s_sharp
+{
+public:
+       s_sharp()
+       {
+             cout << "new" << endl;
+}
+       virtual ~s_sharp()
+       {
+             cout << "delete s_sharp" << endl;
+       }
+};
+class r_afs:public s_sharp
+{
+public:
+       r_afs()
+       {
+             cout << "NEW" << endl;
+}
+       ~r_afs() override
+       {
+             cout << "DELETE" << endl;
+       }
+};
+int main()
+{
+       s_sharp *red = new r_afs;
+       delete red;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+делегирующий конструктор. 
+Сначала вызывается делегирующий конструктор , то есть тот конструктор который идет после ":".\
+Затем уже наш конструктор корректирует значения которые присваиваются. 
+!!!Важно при объявлении делегирующего конструктора не должен быть указан тип переменных.
+Во-первых, конструктору, который вызывает другой конструктор, не разрешается выполнять какую-либо инициализацию членов класса. Поэтому конструкторы могут либо вызывать другие конструкторы, либо выполнять инициализацию, но не всё сразу.
+Количество параметров в делегирующих конструкторах и в самом конструкторе должно совпадать!
+
+class Human
+{
+public:
+       
+       Human(string Name)
+       \\ один параметр
+       {
+             this->Name = Name;    //первое изменение переменной
+             this->Age = 0;
+                    this->Weight = 0;
+       }   
+                                                       |-Это делегирующий конструктор  
+       Human(string Name, int Age) : Human(Name) 
+\\ два параметра, и один в делегирующем конструкторе
+       {
+             this->Age = Age;       // второе изменение переменной
+       }
+       
+       Human(string Name, int Age, int Weight)  :  Human(Name , Age)
+\\три параметра, и два в делегирующем конструкторе
+       {
+             this->Weight = Weight;    // третье изменение переменной
+       }
+       string Name;
+       int Age;
+       int Weight;
+};
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Чисто виртуальный деструктор
+1- делается деструктор чисто виртуальным
+2-за пределами класса определяем деструктор
+Delete получает адрес класса наследника в котором уже хранится адрес родительского класса﻿
+добавляя виртуальный деструктор мы защищаем нашу динамическую память
+
+class Human
+{
+public:
+       virtual ~Human() = 0;
+protected:
+       string Name;
+       int Age;
+       int Weight;
+};
+Human::~Human() { cout << "destructor" << this << endl; }
+class fet : public Human
+{
+public:
+       ~fet() override
+       {
+             cout << "destructor" << this << endl;
+     }
+       fet()
+       {
+             
+       }
+             
+};
+int main()
+{
+       Human *erzan = new fet;
+       delete erzan;
+}
+
+сначала вызывается конструктор базового класса, а затем деструктор производного класса.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Вызов виртуального метода базового класса из производного.
+Что бы вызвать виртуальный метод базового класса из производного
+Нужно написать такую конструкцию
+
+::Имя базового класса::Имя метода базового класса
+
+пример:
+
+class Mui {
+       public:
+       virtual string GetMui()
+       {
+             cout << xio << endl;
+             return xio;    
+       }
+       Mui(string msg)
+       {
+             this->xio = msg;
+       }
+private:
+       string xio;
+};
+class printer : public Mui
+{
+public:
+       void Print(Mui *msg)
+       {
+             cout << msg->GetMui() << endl;
+       }
+};
+class Bracket : public Mui
+{
+public:
+       Bracket(string msg) : Mui(msg)
+       {
+       }
+       string GetMui()override
+       {
+             return "[" + ::Mui::GetMui() + "]";
+       }
+};
+int main()
+{
+       Bracket f("SDS");
+       f.GetMui();
+       }
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Множественное наследование, 
+
+сначала вызывается конструктор первого наследника, затем вызывается конструктор второго наследника, а затем 
+вызывается конструктор самого класса.
+Деструкторы вызываются в обратном порядке.
+
+Пример:
+
+
+class Car
+{
+public:
+       string Drive()
+       {
+             cout << "Я езжу" << endl;
+             return "я езжу";
+       }
+       Car()
+       {
+             cout << "Constructor CAR" << endl;
+       }
+       virtual ~Car()
+       {
+             cout << "Destructor CAR" << endl;
+       }
+};
+class Airplan
+{
+public:
+       string Fly()
+       {
+             cout << "я лечу" << endl;
+             return "я лечу";
+       }
+       Airplan()
+       {
+             cout << "Constuctor AIRPLAN" << endl;
+       }
+        ~Airplan()
+       {
+             cout << "Destructor AIRPLAN" << endl;
+       }
+};
+class Vezdexod : public Car, public Airplan
+{
+public:
+       void Davit()
+       {
+             cout << Fly() << endl;
+             cout << Drive() << endl;
+       }
+       Vezdexod():Airplan(), Car()
+       {
+             cout << "constructor VEZDEXOD of car and airplan" << endl;
+       }
+        ~Vezdexod() override
+       {
+             cout << "Destructor VEZDEXOD" << endl;
+       }
+};
+int main()
+{
+       setlocale(0, "Rus");
+       Vezdexod terminator;
+       terminator.Fly();
+       terminator.Drive();
+       terminator.Davit();
+}
+Вывод
+
+Constructor CAR
+Constructor AIRPLAN
+Constructor VEZDEXOD
+Destructor VEZDEXOD
+Destructor AIRPLAN
+Destructor CAR
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Исправление неоднозначной функции, когда в 2 - родительских классах есть две функции, одна из одного класса, а другая из другого.
+В том случаи если эти функции одинаковы возникает ошибка. Что бы эту ошибку исправить нужно при вызове функции от производного объекта,
+привести производный объект к одному из классов
+
+class Car
+{
+public:
+       string Drive()
+       {
+             cout << "Я езжу" << endl;
+             return "я езжу";
+       }
+       Car()
+       {
+             cout << "Constructor CAR" << endl;
+       }
+       virtual ~Car()
+       {
+             cout << "Destructor CAR" << endl;
+       }
+       string ada()
+       {Программирование
+             return "adaCa";
+       }
+};
+class Airplan
+{
+public:
+       string Fly()
+       {
+             cout << "я лечу" << endl;
+             return "я лечу";
+       }
+       Airplan()
+       {
+             cout << "Constuctor AIRPLAN" << endl;
+       }
+        ~Airplan()
+       {
+             cout << "Destructor AIRPLAN" << endl;
+       }
+        string ada()
+        {
+              return "adaAr";
+        }
+};
+class Vezdexod : public Car, public Airplan
+{
+public:
+       void Davit()
+       {
+             cout << Fly() << endl;
+             cout << Drive() << endl;
+       }
+       Vezdexod():Airplan(), Car()
+       {
+             cout << "constructor VEZDEXOD of car and airplan" << endl;
+       }
+        ~Vezdexod() override
+       {
+             cout << "Destructor VEZDEXOD" << endl;
+       }
+};
+int main()
+{
+       setlocale(0, "Rus");
+       Vezdexod terminator;
+       terminator.Fly();
+       terminator.Drive();
+       terminator.Davit();
+       ((Airplan)terminator).ada();
+       ((Car)terminator).ada();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Солянка из почти изученного
+
+
+#define x 129313
+using namespace std;
+static int ger = 0;
+class abstract
+{
+protected:
+       virtual void Ewe() = 0;
+};
+class Car
+{
+public:
+       string Drive()
+       {
+             cout << "Я езжу" << endl;
+             return "я езжу";
+       }
+       Car()
+       {
+             cout << "Constructor CAR" << endl;
+       }
+       virtual ~Car()
+       {
+             cout << "Destructor CAR" << endl;
+             
+       }
+       virtual int Rer()
+       {
+             cout << Drive() << endl;
+             cout << "CAR  " << INT_MAX << endl;
+             return INT_MAX;
+       }
+       string ada()
+       {
+             return "adaCa";
+       }
+};
+class Airplan
+{
+public:
+       string Fly()
+       {
+             cout << "я лечу" << endl;
+             return "я лечу";
+       }
+       Airplan()
+       {
+             cout << "Constuctor AIRPLAN" << endl;
+       }
+        ~Airplan()
+       {
+             cout << "Destructor AIRPLAN" << endl;
+       }
+        string ada()
+        {
+              return "adaAr";
+        }
+};
+class Vezdexod : public Car, public Airplan, protected abstract
+{
+public:
+       void Davit()
+       {
+             cout << Fly() << endl;
+             cout << Drive() << endl;
+       }
+       Vezdexod():Airplan(), Car()
+       {
+             cout << "constructor VEZDEXOD of car and airplan" << endl;
+       }
+        ~Vezdexod() override
+       {
+             cout << "Destructor VEZDEXOD" << endl;
+       }
+        void Ewe() override
+        {
+              while (ger != 10) {
+                     cout << "переопределенная функция" << endl;
+                     ger++;
+              }
+        }
+        int Rer() override
+        {
+              cout << "Banan rulit" << endl;
+              cout << ::Car::Rer() << endl;
+              return x;
+        }
+};
+int main()
+{
+       setlocale(0, "Rus");
+       Vezdexod terminator;
+       terminator.Fly();
+       terminator.Drive();
+       terminator.Davit();
+       ((Airplan)terminator).ada();
+       ((Car)terminator).ada();
+       terminator.Ewe();
+       terminator.Rer();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Похожая реализация полиморфизма
+
+
+using namespace std;
+static int coun = 0;
+class Bike
+{
+public:
+       void virtual EwistTheWheel() = 0;
+       void virtual Ride() = 0;
+};
+class Human
+{
+public:
+       void Rideon(Bike &bycycle)
+       {
+             cout << " IT IS A " << coun <<" th "<<" BIKE " <<endl;
+             cout << endl;
+             cout << "KRUTIM rul" << endl;
+             bycycle.EwistTheWheel();
+             cout << "RIDIM" << endl;
+             bycycle.Ride();            
+             cout << endl;
+             coun++;
+    }
+};
+class SimpleBike : public Bike
+{
+       void EwistTheWheel() override
+       {
+             cout << "PEDAL BAD krutitsy" << endl;
+       }
+       void Ride() override
+       {
+             cout << "WE BAD EDIM" << endl;
+       }
+};
+class BMX : public Bike
+{
+       void EwistTheWheel() override
+       {
+             cout << "PEDAL BAD krutitsy" << endl;
+       }
+       void Ride() override
+       {
+             cout << "WE COOL EDIM" << endl;
+       }
+};
+class SPORTBike : public Bike
+{
+       void EwistTheWheel() override
+       {
+             cout << "PEDAL GOOD krutitsy" << endl;
+       }
+       void Ride() override
+       {
+             cout << "WE THE BEST EDIM" << endl;
+       }
+};
+class TheXOLMBike : public Bike
+{
+       void EwistTheWheel() override
+       {
+             cout << "PEDAL NORM krutitsy" << endl;
+       }
+       void Ride() override
+       {
+             cout << "WE GOOD EDIM" << endl;
+       }
+};
+int main()
+{
+       SimpleBike s;
+       SPORTBike r;
+       BMX b;
+       TheXOLMBike wer;
+       Human dimon;
+       dimon.Rideon(s);
+       dimon.Rideon(r);
+       dimon.Rideon(b);
+       dimon.Rideon(wer);
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Виртуальное наследование, нужно для предотвращения проблем множественного наследования.
+То есть класс производный от двух классов, а эти два класса все направленны на один класс.
+Получается что у этих двух классов есть 1 общий предок, а у этого общего предка могут быть и приватные поля или protected.
+И получается что у двух классов одно приватное поле.
+Из_за этого в дальнейшем возникает множество проблем в компиляции.
+И для того что бы у этих двух классов было одно приватное поле, или конструктор нам и нужно виртуальное наследование
+пример;
+
+class Animal
+{
+public:
+             virtual void eat() = 0;
+             Animal(double xp)
+             {
+                    cout << "ANIMAL" << endl;
+                    this->HP = xp;
+             }
+          double HP;
+          double kitar;
+};
+class Mamount : public Animal
+{
+public:
+       void eat() override
+       {
+             cout << "AAAM NUM NUM" << endl;
+       }
+       Mamount(double xp) :Animal(xp)
+       {
+             cout << "CONSTRUCTOR MAMOUNT" << endl;
+       }
+};
+class Elefhant : public Animal
+{
+public:
+       void eat() override
+       {
+             cout << "THOOO" << endl;
+       }
+       Elefhant(double xp) : Animal(xp)
+       {
+             cout << "CONSTRUCTOR ELEFHANT" << endl;
+       }
+};
+class giraffe : public  Mamount, public  Elefhant
+{
+public:
+       void eat() override
+       {
+             cout << "NORM" << endl;
+       }
+       giraffe(double xp, double kitar) : Elefhant (xp), Mamount(xp)
+       {
+             cout << "I AM WANT EAT" << endl;
+       }
+};
+int main()
+{
+       
+       giraffe red(34.190, 32.43);
+       red.eat();
+}
+
+Первый раз с классом Elefhant, а второй раз с классом Mamount, и у этих классов одно (типо)приватное поле
+
+ANIMAL
+CONSTRUCTRO MAMOUNT
+ANIMAL
+CONSTRUCTOR ELEFHANT
+I AM WANT EAT
+NORM
+
+А если наследование сделать в классах мамонт и слон виртуальным, то поля класса Animal копироваться не будет
+пример:
+
+class Animal
+{
+public:
+       virtual void eat() = 0;
+       Animal(double xp)
+       {
+             cout << "ANIMAL" << endl;
+             this->HP = xp;
+       }
+       double HP;
+       double kitar;
+       Animal()
+       {
+             cout << "ANIMAL" << endl;
+       }
+};
+                                      |ТУТ|
+class Mamount : public virtual Animal
+{
+public:
+       void eat() override
+       {
+             cout << "AAAM NUM NUM" << endl;
+       }
+       Mamount(double xp) :Animal(xp)
+       {
+             cout << "CONSTRUCTOR MAMOUNT" << endl;
+       }
+};
+                                    |ТУТ|
+class Elefhant : public virtual Animal
+{
+public:
+       void eat() override
+       {
+             cout << "THOOO" << endl;
+       }
+       Elefhant(double xp) : Animal(xp)
+       {
+             cout << "CONSTRUCTOR ELEFHANT" << endl;
+       }
+};
+class giraffe : public  Mamount, public  Elefhant
+{
+public:
+       void eat() override
+       {
+             cout << "NORM" << endl;
+       }
+       giraffe(double xp, double kitar) : Elefhant(xp), Mamount(xp)
+       {
+             cout << "I AM WANT EAT" << endl;
+       }
+};
+int main()
+{
+       giraffe red(34.190,321.12);
+        Animal *ptr = &red;
+         ptr->eat();
+}
+Абстракция может быть как указатель.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Работа с файлами
+
+int main()
+{
+       string str = "lesson.txt";
+       cout << "HELLO MOTHER FUCKER" << endl;
+       ofstream fot;
+       fot.open(str, ofstream::app);
+       if (!fot.is_open())
+       {
+             cout << "BED" << endl;
+       }
+       else
+       {
+             fot << "KRUTA" << endl;
+       }
+       cout << "cin a number" << endl;
+       int b;
+       cin >> b;
+       fot << "\n" << endl;
+       fot << b << endl;
+       fot << "KRUTAAA" << endl;
+       
+       fot.close();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Считывание,вывод ввод:
+
+int main()
+{
+       string str = "lesson.txt";
+       cout << "Работа с файлами" << endl;
+       
+       ifstream foh;
+       foh.open(str);
+       if (!foh.is_open())
+       {
+             cout << "EROR" << endl;
+       }
+       else
+       {
+             using std::cin;
+             using std::cout;
+             cout << "FILE opening" << endl;
+             string ste;
+             while (!foh.eof()) // считывание до пробела
+             {
+                    ste = "";
+                    std::getline(foh, ste);//1-параметр где считывать линию, а  второй куда это сохранять
+                    cout << ste << endl;
+             }
+          //  char ch;
+             // считывание данных по символьно
+             //while (foh.get(ch))
+             //{
+                    //cout << ch;
+             //}
+       }
+    ofstream fot;
+       fot.open(str, ofstream::app);
+       if (!fot.is_open())
+       {
+             cout << "EROR" << endl;
+       }
+       else
+       {
+             cout << "FILE IS OPEN" << endl;
+             fot << "Petrucho sit in the file" << endl;
+       }
+       cout << "cin a number" << endl;
+       string rer;
+       long long int b;
+       cin >> b;
+       fot << "\n" << endl;
+       fot << b << endl;
+       cout << "Cin a string" << endl;
+       cin >> rer;
+       fot << rer << endl;
+       
+       fot.close();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Запись объекта в файл и вывод
+
+class Point
+{
+public:
+       Point()
+       {
+             x = y = z = 0;
+       }
+       Point(double x, double y, double z)
+       {
+             this->x = x;
+             this->y = y;
+             this->z = z;
+       }
+       void Print()
+       {
+             cout << "   X  =  " << x << "   Y  =  " << y << "  Z  =  " << z <<  endl;
+       }
+protected:
+       double x;
+       double y;
+       double z;
+};
+int main()
+{
+       
+       Point point(534, 1054, 242423);
+       point.Print();
+       string path = "lesson.txt";
+       ofstream f;
+       f.open(path, ofstream::app);
+       if (!f.is_open())
+       {
+             cerr << "ERORR" << endl;
+       }
+       else
+       {
+             cout << "File open" << endl;
+             f.write((char*)&point, sizeof(Point));
+       }
+       f.close();
+       
+       
+       ifstream fn;
+       fn.open(path);
+       if (!fn.is_open())
+       {
+             cerr << "ERROR triggered" << endl;
+       }
+       else
+       {
+             cout << "FILE OPEN" << endl;
+             Point pnt;
+             while (fn.read((char*)&pnt, sizeof(Point)))//либо тру либо фолс
+             {
+                    pnt.Print();
+             }
+       }
+       fn.close();
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Правила в ООП 
+
+ПРАВИЛА ООП
+
+Не важно где находитя friend
+Всегда в полиморфном классе использовать виртуальный деструктор для избежания утечек памяти,
+Сначала вызываются конструкторы базового класса затем производного, деструкторы наобоорот,
+Указатель на Обьект,  базового класса может ссылаться на обьект самого класса и на любой другой класс от которого он унаследован.
+Чисто виртуальная функция базового класса, обязанаОБЯЗАНА быть переопределена в производных классах.
+Вызов virtual метода базового класса из производного осуществляется по такой схеме 
+ : : имя базового класса : : метод базового класса
+Вызов обычного метода базового класса происходит вот так
+имя базового класса::метод базового класса
+
+ Абстрактный класс это класс с чисто виртуальной функцией или чисто виртуальным деструктором.
+что бы сделать деструктор чисто виртуальным нужно 
+1 - Сделать деструктор чисто виртуальным
+2 - За пределами класса определить деструктор
+
+Обьект абстракции может ссылаться на обьект производного класса и использовать методы своей (чисто) виртуальной функции.
+Для того что бы функцию одного класса сделать дружественной другому классу, нужно 
+1 -  Сделать функцию дружественной тому классу по такой конструкции
+
+friend тип возвращаемого значения  Имя класса::имя функции(класс&обьект)
+2 - Определить функцию вне класса
+
+К статическим переменным в классе можно обращаться напрямую без экземпляра класса.
+имя класса::имя статик переменной
+Для того что бы иницилизировать static переменную,  нужно вне класса нужно воспользоваться такой конструкцией 
+}
+тип инициализации имя класса::имя static переменной  = значение;
+
+К статическим функциям так же можно обращаться напрямую без экземпляра класса
+Статические функции должны работать  только с  статические переменные класса
+Не статические функции могут работать с статическими переменными класса.
+При перегрузки инкремента и декремента нужно возвращать ссылку на обьект *this;
+Возврат по ссылке или по указателю не может возвращать локальные переменные.
+Из-за этого в перегрузках операторов используют возврат и передачу по ссылке, ведь передача по ссылке или указателю изменяют параметры обьекта. 
+В сравнении двух обьектов всегда эти обьекты передаются по ссылке.
+Совет: Не перегружайте операторы, которые будут бессмысленны для вашего класса.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Двухмерный динамический массив повторная реализация забытого
+
+int main()
+{
+       int rows;
+       int cols;
+       int kol;
+       cout << "Please cin a rows" << endl;
+       cin >> rows;
+       cout << "Please cin a cols" << endl;
+       cin >> cols;
+       cout << "Cin a koefficentt" << endl;
+       cin >> kol;
+       int **arr = new int*[rows];
+       for (int b = 0; b < rows; b++)
+       {
+             arr[b] = new int[cols];
+       }
+       for (int b = 0; b < rows; b++) {
+             for (int i = 0; i < cols; i++) {
+                    arr[b][i] = rand() % kol;
+                    cout << "ROWS  " << *(arr + b) << endl;
+                    cout << "Cols   " << *(arr + i) << endl;
+                    cout << "COLS && ROWS \t" << arr[b][i];
+             }
+       }
+       for (int c = 0; c < cols; c++)
+       {
+             delete[] arr[c];
+       }
+       delete[]arr;
+}          
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Работа с файлами ifstream, fstream, ofstream
+
+class Kasta
+{
+public:
+       Kasta()
+       {
+             dimonage = valeraage = kirillage = 0;
+       }
+       Kasta(int d, int v, int k)
+       {
+             this->dimonage = d;
+             this->valeraage = v;
+             this->kirillage = k;
+       }
+       int Print()
+       {
+             cout << "\n Kirill Age = \t" << kirillage << "\n" << "Valera age"  << valeraage << "\n" << "Dima age" << dimonage << endl;
+             return kirillage, valeraage, dimonage;
+       }
+private:
+       int dimonage;
+       int valeraage;
+       int kirillage;
+};
+int main()
+{
+       setlocale(LC_ALL, "Rus");
+       Kasta kast (22, 69, 7);
+       string path = "lesson.txt";
+       fstream ref;
+       ref.open(path, fstream::in | fstream::out | fstream::app);
+       if (!ref.is_open())
+       {
+             cerr << "Ошибка открытия файла" << endl;
+       }
+       else
+       {
+             string msg;
+             int val;
+             cout << "Нажмите 1 для записи сообщений в файл fstream" << endl;
+             cout << "Нажмите 2 для считывания всех сообщений из файла" <<  endl;
+             cin >> val;
+             while (val != 1 && val != 2) {
+                    cin >> val;
+             }
+             if (val == 1)
+             {
+                    cout << "Введите ваше сообщение" << endl;
+                    SetConsoleCP(1251);
+                    cin >> msg;
+                    ref << msg << "\n";
+                    SetConsoleCP(866);
+             }
+             else
+             {
+                    cout << "Чтение данных fstream" << endl;
+                    while (ref.eof())
+                    {
+                           msg = " ";
+                           ref >> msg;
+                           cout << msg << endl;
+                    }
+             }
+       }
+       ref.close();
+       ofstream r;
+       r.open(path, ofstream::app);
+       if (!r.is_open())
+       {
+             cerr << "Файл не открыт" << endl;
+       }
+       else
+       {
+             int val = 0;
+             cout << "Файл открыт ofstream" << endl;
+             r.write((char*)&kast, sizeof(Kasta));
+             cout << "Хотите ли вы ввести данные, если да нажмите 1" << endl;
+             cin >> val;
+             if (val == 1) {
+                    cout << "Если строка введите 3, если число введите 2" <<  endl;
+                    val = 0;
+                    cin >> val;
+                    if (val == 2) {
+                           unsigned int b;
+                           cin >> b;
+                           r << b;
+                    }
+                    else
+                    {
+                           string e;
+                           cin >> e;
+                           r << e;
+                    }
+             }
+       }
+       r.close();
+       ifstream f;
+       f.open(path, ifstream::app);
+       if (!f.is_open())
+       {
+             cerr << "Файл не открыт" << endl;
+       }
+       else
+       {
+             cout << "Файл открыт ifstream" << endl;
+             while (!f.eof())
+             {
+                    string str;
+                    str = "";
+                    getline(f, str);
+                    cout << str << endl;
+             }
+             while (f.read((char*)&kast, sizeof(Kasta)))
+             {
+                    cout << "Считываем данные и записываем их в обьект" << endl;
+                    kast.Print();
+             }
+       }
+       f.close();
+}                 
+
+
+Файлы всегда нужно закрывать. У fstream eof без !, а у ifstream eof с !;
+У методов write и read одни те же параметры.
+Методы write и read используются для обьектов
+Метод write используется вместе с циклом
+А метод read без цикла
+IFSTREAM = READ,GETLINE
+OFSTREAM = WRITE и ВВОД как в cout
+fstream это все вместе
+ofstream g;
+g.open(path, ofstream::app);
+ifstream g;
+g.open(path, ifstream::app);
+fstream g;
+g.open(path, fstream::in|fstream::out|fstream::app);
+разница в считывание между fstream
+fstream ref;
+while(ref.eof())
+{
+  msg = ""; NEN
+  ref >>msg;
+  cout<<msg<<endl;
+}
+
+ifstream ref;
+while(!ref.eof())
+{
+cin>>msg;NEN
+getline(ref,msg);
+cout<<msg<<endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+В перегрузке оператор ввода >> используется тип istream, а   в вводе используется тип ostream
+#include <iostream>
+#include <string>
+#include<fstream>
+#include<Windows.h>
+using namespace std;
+class Kasta
+{
+public:
+       Kasta()
+       {
+             dimonage = valeraage = kirillage = 0;
+       }
+       Kasta(int d, int v, int k)
+       {
+             cout << "konstructor Kasta" << endl;
+             this->dimonage = d;
+             this->valeraage = v;
+             this->kirillage = k;
+       }
+       int Print()
+       {
+             cout << "\n Kirill Age = \t" << kirillage << "\n" << "Valera age"  << valeraage << "\n" << "Dima age" << dimonage << endl;
+             return kirillage, valeraage, dimonage;
+       }
+       virtual ~Kasta()
+       {
+             cout << "destructor kasta" << endl;
+       }
+       virtual void Ret()
+       {
+             cout << "OPA RET VIRTUAL" << endl;
+       }
+       friend ostream& operator<<(ostream&os, const Kasta&kasr);
+       friend istream& operator>>(istream&is, Kasta&kasr);
+private:
+       int dimonage;
+       int valeraage;
+       int kirillage;
+};
+class Sae : public virtual Kasta
+{
+public:
+       Sae()
+       {
+             fae = 0;
+       }
+       Sae(int d)
+       {
+             cout << "konstructor sae" << endl;
+             fae = d;
+       }
+       virtual ~Sae()
+       {
+             cout << "Kukaruiky" << endl;
+       }
+       void Ret() override final
+       {
+             cout << "Override metod" << endl;
+       }
+protected:
+       int fae;
+};
+ostream& operator<<(ostream&os, const Kasta&kasr)
+       {
+       os << kasr.dimonage << "  " << kasr.kirillage << "  " << kasr.valeraage  << endl;
+       return os;
+}
+istream& operator >> (istream& is, Kasta& kasr)
+{
+       is >> kasr.dimonage >> kasr.kirillage >> kasr.valeraage;
+       return is;
+}
+int main()
+{      
+       Kasta fv(12, 123, 13);
+       int a = 3;
+       setlocale(LC_ALL, "Rus");
+       Kasta kast (22, 69, 7);
+       string path = "lesson.txt";
+       fstream ref;
+       ref.open(path, fstream::in | fstream::out | fstream::app);
+       if (!ref.is_open())
+       {
+             cerr << "Ошибка открытия файла" << endl;
+       }
+       else
+       {
+             ref << kast;
+             ref >> a;
+             ref << a;
+             string msg;
+             int val;
+             cout << "Нажмите 1 для записи сообщений в файл fstream" << endl;
+             cout << "Нажмите 2 для считывания всех сообщений из файла" <<  endl;
+             cin >> val;
+             while (val != 1 && val != 2) {
+                    cin >> val;
+             }
+             if (val == 1)
+             {
+                    cout << "Введите ваше сообщение" << endl;
+                    SetConsoleCP(1251);
+                    cin >> msg;
+                    ref << msg << "\n";
+                    SetConsoleCP(866);
+             }
+             else
+             {
+                    cout << "Чтение данных fstream" << endl;
+                    while (ref.eof())
+                    {
+                           msg = " ";
+                           ref >> msg;
+                           cout << msg << endl;
+                    }
+                    cout << "" << endl;
+                    while (!ref.eof())
+                    {
+                           Kasta kas;//создаем пустой объект и помещаем туда  данные с файла
+                           ref >> kas;
+                           cout << kas << endl;
+                    }
+             }
+       }
+       ref.close();
+       ofstream r;
+       r.open(path, ofstream::app);
+       if (!r.is_open())
+       {
+             cerr << "Файл не открыт" << endl;
+       }
+       else
+       {
+             int val = 0;
+             cout << "Файл открыт ofstream" << endl;
+             r.write((char*)&kast, sizeof(Kasta));
+             cout << "Хотите ли вы ввести данные, если да нажмите 1" << endl;
+             cin >> val;
+             if (val == 1) {
+                    cout << "Если строка введите 3, если число введите 2" <<  endl;
+                    val = 0;
+                    cin >> val;
+                    if (val == 2) {
+                           unsigned int b;
+                           cin >> b;
+                           r << b;
+                    }
+                    else
+                    {
+                           string e;
+                           cin >> e;
+                           r << e;
+                    }
+             }
+       }
+       r.close();
+       ifstream f;
+       f.open(path, ifstream::app);
+       if (!f.is_open())
+       {
+             cerr << "Файл не открыт" << endl;
+       }
+       else
+       {
+             cout << "Файл открыт ifstream" << endl;
+             while (!f.eof())
+             {
+                    string str;
+                    str = "";
+                    getline(f, str);
+                    cout << str << endl;
+             }
+             while (f.read((char*)&kast, sizeof(Kasta)))
+             {
+                    cout << "Считываем данные и записываем их в обьект" << endl;
+                    kast.Print();
+             }
+       }
+       
+       f.close();
+       Sae er;
+       Kasta *ptr = &er;
+       ptr->Print();
+       ptr->Ret();
+       cout << fv << endl;
+}                 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+явная перегрузка ввода и вывода
+#include <iostream>
+#include<fstream>
+using namespace std;
+class point
+{
+public:
+       point(int xr, int xy,int xz)
+       {
+             x = xr;
+             y = xy;
+             z = xz;
+       }
+       point()
+       {
+             x = y = z = NULL;
+       }
+    ~point()
+       {
+             cout << "point destruction" << endl;
+       }
+       friend ostream& operator <<(ostream& os, point&r);
+       friend istream& operator >>(istream& is, point&s);
+private:
+       int x;
+       int y;
+       int z;
+};
+ostream& operator <<(ostream& os, point&r)
+{
+       os << r.x << """DJ EBAN""" << r.y <<"""DJ EBAN"""<< r.z << endl;
+       return os;
+}
+istream& operator >>(istream& is, point&s)
+{
+       is >> s.x >> s.y >> s.z;
+       return is;
+}
+int main()
+{      
+       setlocale(LC_ALL, "Rus");
+       point p(23,21,32);
+       string path = "lesson.txt";
+       fstream fout;
+       fout.open(path, fstream::in | fstream::out | fstream::app);
+       if (!fout.is_open())
+       {
+             cerr << "Warning" << endl;
+       }
+       else
+       {
+             cout << "файл открыт" << endl;
+             fout << p << endl;
+             while (!fout.eof())
+             {
+                    fout >> p;
+                    if (fout.eof())
+                    {
+                           break;
+                    }
+                    cout << p << endl;
+             }
+       }
+}   
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Обработка исключений try catch
+
+
+int main()
+{      
+       setlocale(LC_ALL, "Rus");
+       ifstream fot;
+       fot.exceptions(ifstream::badbit | ifstream::failbit);
+       try
+       {
+             cout << "Открытие файла" << endl;
+             fot.open("lessonewtwerwrrw");
+             cout << "Файл открыт" << endl;
+       }
+       catch (const ifstream::failure & er)
+       {
+             cout << er.what() << endl;
+             cout << er.code() << endl;
+             cout << "Ошибка открытия файла" << endl;
+       }
+}                
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Выброс исключений throw
+
+
+void languga(int s)
+{
+       if (s > 10)
+       {
+             throw exception("MIT");
+       }
+       cout << "Babi" << endl;
+}
+int main()
+{
+       try {
+             languga(25);
+       }
+       catch (exception &dex)
+       {
+             cout << "We feed a  " << dex.what() << endl;
+       }
+}
+
+exception - это тип!!!. Что бы наше выброшенное исключение ловилось с помощью catch, нужно что бы тип исключения throw, был одинаковым с catch.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Самый часто используемый синтаксис:
+std::sort(arr.begin(), arr.end()); — передаем указатель (итератор) на начало контейнера и терминальный указатель (итератор)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+параметр catch зависит от throw, так же как и принимаемые параметры
+void languga(int s)
+{
+       if (s >= 10)
+       {
+             throw exception("MIT");
+       }
+       if (s <= 10)
+       {
+             throw "Russian languge";
+       }
+       cout << "Babi" << endl;
+}
+int main()
+{
+       try {
+             languga(10);
+       }
+       catch (exception &dex)
+       {
+             cout << "We feed a  " << dex.what() << endl;
+       }
+       catch (const char *re)
+       {
+             cout << "We need a " << re << endl;
+       }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Мы делаем класс our производным для того что бы исключения типа exception могли ловиться им, тоже самое про конструктор,мы передаем делегирующему конструктору exception наши параметры, что бы затем мы могли с ними работать.
+
+class our: public exception
+{
+public:
+       our(const char *msg,int dataState) : exception(msg)
+       {
+             this->dataState = dataState;
+       }
+       int GeyDataState()
+       {
+             cout << "CATCH d type" << "\t";
+             return dataState;
+       }
+private:
+       int dataState;
+};
+void languga(int s)
+{
+       if (s > 10)
+       {
+             cout << "S > 10" << endl;
+             throw (1000000);
+       }
+       if (s < 10)
+       {
+             throw exception("This is a expection type");
+       }
+       else if(s == 10)
+       {
+             throw our("this is D type",007);
+       }
+       cout << "Babi" << endl;
+}
+int main()
+{
+       long long v;
+       cout << "Cin a number" << endl;
+       cin >> v;
+       try {
+             languga(v);
+       }
+       catch (int v)
+       {
+             cout << "This is a number" << endl;
+             cout << "We feed a  " <<v<< endl;
+       }
+             catch (our &re)
+       {
+                    cout << "d" << endl;
+                    cout<<re.GeyDataState()<<endl;
+       }
+             catch (exception &f)
+             {
+                    cout << "exception" << endl;
+                    cout<<f.what()<<endl;
+             }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Программирование
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class our: public exception
+{
+public:
+       our(const char *msg,int dataState) : exception(msg)
+       {
+             this->dataState = dataState;
+       }
+       int GeyDataState()
+       {
+             cout << "CATCH d type" << "\t";
+             return dataState;
+       }
+       
+private:
+       int dataState;
+       static int r;
+};
+int our::r = 0;
+
+
+void languga(int s)
+{
+       if (s >= 10 && s <= 50)
+       {
+             cout << "S > 10" << endl;
+             throw (1000000);
+       }
+       if (s < 10)
+       {
+             throw exception("This is a expection type");
+       }
+       else if(s == 10)
+       {
+             throw our("this is D type",s);
+       }
+       else
+       {
+             throw our("Number is > 50", s);
+       }
+       cout << "Babi" << endl;
+}
+
+
+
+int main()
+{
+       long long v;
+       cout << "Cin a number" << endl;
+       cin >> v;
+       try {
+             languga(v);
+       }
+       catch (int v)
+       {
+             cout << "This is a number" << endl;
+             cout << "We feed a  " <<v<< endl;
+       }
+             catch (our &re)
+       {
+                    cout << "re" <<re.what()<< endl;
+                    cout<<"Data state"<<re.GeyDataState()<<endl;
+           
+  }
+             catch (exception &f)
+             {        
+                      cout << "exception" << endl;    
+                    cout<<f.what()<<endl;
+             }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Шаблонные классы
+ 
+class MyClass
+{
+public:
+       MyClass(int f);
+       ~MyClass();
+       MyClass();
+private:
+       int x;
+};
+MyClass::MyClass(int f)
+{
+       cout << "" << endl;
+       this->x = f;
+}
+MyClass::MyClass()
+{
+       x = NULL;
+}
+MyClass::~MyClass()
+{
+       cout << "" << endl;
+}
+  
+template<typename T>
+class Eda
+{
+public:
+       
+       Eda(T value)
+       {
+             cout << "" << endl;
+             this->value = value;
+       }
+       int TypeSize()
+       {
+             cout<<sizeof(value)<<endl;
+             return sizeof(value);
+       }
+       T getvalue()
+       {
+             T a = value;
+             return a;
+       }
+       ~Eda()
+       {
+             cout << "" << endl;
+       }
+private:
+       
+       T value;
+};
+int main()
+{
+       setlocale(LC_ALL, "rus");
+       double re = 10;
+       MyClass g(3);
+       Eda <MyClass> e(g);
+       Eda <char> r(re);
+       e.TypeSize();
+       e.getvalue();
+       g = e.TypeSize();
+       char ew = r.getvalue();
+       size_t t = e.TypeSize();
+       cout <<"size_t e "<< t << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Наследование шаблонных классов
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Наследование шаблонных классов
+В производно классе конструктор должен быть такого типа
+Имя класса(Шаблонный тип переменная) : Имя базового класса<шаблонный тип>(переменная)
+|                           
+#include <iostream>
+#include<typeinfo>
+using namespace std;
+template<class T1 >
+class TypeSize
+{
+public:
+       TypeSize(T1 val)
+       {
+             cout << "constructor typesize" << endl;
+             this->value = val;
+       }
+       void DataSize()
+       {
+             cout << "value " << sizeof(value) << endl;
+       }
+       TypeSize()
+       {
+             this->value = T1{};
+       }
+protected:
+       T1 value;
+};
+template<class T1 >
+class Type : public  TypeSize<T1>
+{
+public:
+       Type(T1 value) : TypeSize<T1> ::TypeSize(value)
+       {}
+       Type() : TypeSize<T1> :: TypeSize()
+       {}
+       void Rer(T1 value)
+       {
+             cout << value << endl;
+       }
+       void Show()
+       {
+             cout << "Название типа " << typeid(this->value).name() << endl;
+       }
+};
+int main()
+{
+       setlocale(LC_ALL, "Rus");
+       int v = 1;
+       Type<int>j(v);
+       j.DataSize();
+       j.Show();
+       j.Rer(v);
+}
+
+                 |
+пк(T1 value) : бк
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+У нас есть два класса в двух этих классах две функции с одинаковой сигнатурой, но разной реализацией.
+И от двух этих классов мы наследуем один класс.
+И когда мы создаем обьект производного класса и вызываем ту функцию, возникает ошибка.
+Что бы ее исправить нам нужно наш обьект производного класса привести к одному из классов
+вот так
+|||||
+
+((класс к которому хотим привести)обьект производного класса).функция();
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cпецилизация шаблона
+Первый класс является общим шаблоном
+А второй специализацией
+Специализация может иметь совсем другое поведение
+В отличии от общего класса
+
+static std::string c = "C++";
+using namespace std;
+template<class T1 >
+class Printer
+{
+public:
+       void Print(T1 value)
+       {
+             cout << value << endl;
+       }
+};
+template<>
+class Printer<string>
+{
+public:
+       void Print(string value)
+       {
+             if (c == value)
+             {
+                    for (int b = 0; b < 10000; b++)
+                    {
+                           cout <<value<<" для БОГОООВ" << "\t";
+                           cout << endl;
+                    }
+             }
+             else
+             {
+                    cout << "______" << value << "_______" << endl;
+             }
+       }
+};
+template<>
+class Printer<int>
+{
+public:
+       void Print(int b)
+       {
+             if (b > 18)
+             {
+                    cout << "Супермаркет" << endl;
+             }
+             if (b > 12)
+             {
+                    cout << "Продажа машин" << endl;
+             }
+             if (b > 6)
+             {
+                    cout << "Молодой человек у вас есть совесть?" << endl;
+                    cin >> b;
+                    if (b == 0)
+                    {
+                           cout << "Ну тогда иди отсюда" << endl;
+                    }
+                    else
+                    {
+                           cout << "А ну ж простите" << endl;
+                    }
+             }
+             else
+             {
+                    cout << "Скажи понятно" << endl;
+             }
+       }
+};
+int main()
+{
+       setlocale(LC_ALL, "RUS");
+       Printer<string>d;
+       d.Print("C++");
+       Printer<char>f;
+       f.Print('e');
+       Printer<int>re;
+       re.Print(7);
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Если тебе надо присвоить переменной значение по умолчанию - используй конструктор по умолчанию.
+Например так.
+this->value = T1(); // Или this->value = T1{}; для C++11 и выше.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#define UINT32_MAX  (0xffffffff)
+template<class T1 >
+class Td
+{
+public:
+       Td(T1 value)
+       {
+             this->value = value;
+       }
+       Td()
+       {
+             this->value = T1{};
+       }
+       virtual void Size()
+       {
+             cout << "VALUE  " << sizeof(value) << endl;
+       }
+protected:
+       T1 value;
+};
+template<class T1>
+class Ts : public Td<T1>
+{
+public:
+       Ts(T1 value) : Td<T1> ::Td(value)
+       {}
+       Ts() : Td<T1> :: Td()
+       {}
+       void Size() override final
+       {
+             cout << "Value  " << sizeof(this->value) << endl;
+             cout << "TS  " << endl;
+       }
+       void Type()
+       {
+             cout << "Type is  " << typeid(this->value).name() << endl;
+       }
+       void retur(T1 de)
+       {
+             cout << "IT IS NUMBER  " << de << endl;
+       }
+};
+int main()
+{
+       int g;
+       int e;
+       cin >> e >> g;
+       if (e + g )
+       {
+             e /= 2;
+             g /= 2;
+             cout << "NUMBER > INT_MAX" << endl;
+       }
+       Ts<int>d(e);
+       d.Size();
+       d.retur(e);
+       d.Type();
+       Td<int>f(g);
+       f.Size();
+       cout << UINT32_MAX << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ключевые слова explicit и delete
+
+Слово explicit делает конструктор закрытым для неявных конвертаций.
+(которое пишется перед именем конструктора).
+Но конструктор с модификатор explicit может быть вызван внутри класса.
+Для решения этой проблемы нужно использовать слово delete для удаления этого конструктора.
+(при вызове конструктора с модификатором delete будет ошибка)
+пример:
+
+private:
+      string m_string;
+public:
+       SomeString(char) = delete;
+explicit SomeString(int a)
+{
+     m_string.resize(a);
+}
+
+конструкторы копирования и перегруженные операторы 
+так же могут удалены с помощью delete;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+При поверхностном копировании просто копируются аргументы, но в работе с динамической памятью возникают ошибки.
+Ведь копируется просто адрес указателя, а не его фактическое значение(то есть со значением никаких изменений нет).
+Поверхностное копирования выполнимое конструктором копирования по умолчанию всегда приводит к проблемам.
+Для решений этих проблем и нужно глубокое копирование:
+При работе с динамической памятью сначала память выделяет для копирования АДРЕСА, которые содержат исходные указатели, а затем для копирования фактического значения.
+В итоге копия находится в отдельном месте и копия никак не влияет на друг друга.
+
+Для выполнения глубокого копирования нужен конструктор копирования и перегрузка оператора присваивания
+
+#include <cstring> // для strlen()
+#include <cassert> // для assert()
+class SomeString
+{
+private:
+       char *m_data;
+       int m_length;
+public:
+       SomeString(const char *source = "")
+       {
+             assert(source); // проверяем не является ли source нулевой строкой
+             // Определяем длину source
+             // Плюс еще один символ для нуль-терминатора (символа завершения строки)
+             m_length = strlen(source) + 1;
+             // Выделяем достаточно памяти для хранения копируемого значения в соответствии с длиной этого значения
+             m_data = new char[m_length];
+             // Копируем значение по символам в нашу выделенную память
+             for (int i = 0; i < m_length; ++i)
+                    m_data[i] = source[i];
+             // Убеждаемся, что строка завершена
+             m_data[m_length - 1] = '\0';
+       }
+       ~SomeString() // деструктор
+       {
+             // освобождаем память, выделенную для нашей строки
+             delete[] m_data;
+       }
+       char* getString()
+       {
+             return m_data;
+       }
+       int getLength()
+       {
+             return m_length;
+       }
+       //конструктор копирования
+       SomeString(const SomeString& sourse)
+       {
+             // ведь m_lenght не является указателем
+             m_length = sourse.m_length;
+             if (sourse.m_data)
+             {
+                    m_data = new char[m_length];
+                    for (int i = 0; i < m_length;++i)
+                    {
+                           m_data[i] = sourse.m_data[i];
+                    }
+             }
+             else
+             {
+                    m_data = nullptr;
+             }
+       }
+       //оператор присваивания и конструктор копирования очень похожи
+       //оператор присваивания
+       SomeString& operator=(const SomeString& source)
+       {
+             //сравниваем именно по ссылке, наш обьект
+             // проверка на само присваивание
+             if (this == &source)
+             {
+                    return *this;
+             }
+             /*
+        При вызове перегруженного оператора присванивания, обьект которому
+             присваивается другой обьект, может содержать предыдущее значение,
+             которое нам необходимо удалить.Прежде чем мы выделим память для нового обьекта.
+             При динамическо выделенной памятью нам всегда нужно освободить старую память.
+             До того как мы выделим новую.
+             Если мы этого не сделаем произойдет утечка памяти.
+             */
+             //сначала нам нужно очистить предыдущее значение m_data
+             delete[] m_data;
+             // потому что m_lenght не является указателем
+             //копируем размер
+             m_length = source.m_length;
+             // проверка на NULL
+             if (source.m_data)
+             {
+                    //работаем только с памятью
+                    // выделяем память для нашей копией
+                    m_data = new char[m_length];
+                    //выполняем копирование до размера
+                    for (int i = 0; i < m_length; ++i)
+                    {
+                           m_data[i] = source.m_data[i];
+                    }
+             }
+             else
+             {
+                    m_data = nullptr;
+       }
+return *this
+};
+int main(){}
+
+Заметили, что код перегрузки очень похож на код конструктора копирования? Но здесь есть три основных отличия:
+1 Мы добавили проверку на само-присваивание.
+2  Мы возвращаем текущий объект (с помощью *this), чтобы иметь возможность выполнять цепочку операций присваивания.
+3  Мы явно удаляем любое значение, которое объект уже хранит (чтобы не произошло утечки памяти).
+план оператора присваивания
+1 - Делаем возврат и передачу по ссылке
+2 - делаем проверку на само-присваивание, если this == &объект,то возвращаем *this
+3 - Очищаем предыдущие значения в массиве
+4 - Копируем размер из старого в новый 
+5 - делаем проверку на nullptr
+6 - Выделяем память для нашей копией через new тип данных[размер]
+7 - Выполняем копирование до конца размера
+8 - Полученный массив будет равен нашему массив[переменная] = обьекту.массив[переменная]
+9   -  Иначе(если указатель нулевой) массив = 0;
+10 - Возвращаем ссылку на объект что бы продолжить выполнять цепочку операций присваивания
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Умные указатели сами все чистят за собой, и следят за памятью
+template<typename T >
+class SmartPoint
+{
+public:
+       SmartPoint(T *ptr)
+       {
+             cout << "konstructor" << endl;
+             this->ptr = ptr;
+       }
+       SmartPoint()
+       {
+             ptr = nullptr;
+       }
+       ~SmartPoint()
+       {
+             cout << "delete" << endl;
+             delete ptr;
+       }
+       //мы дожны вернуть ссылку на T ведь мы должны вернуть не копию обьекта, а сам обьект
+перегрузка оператора разыменования,что бы мы могли получить значение 
+       T& operator*()
+  |     {
+             return *ptr;
+       }
+private:
+       T *ptr;
+};
+int main()
+{
+       setlocale(LC_ALL, "Rus");
+       //обычный указатель
+       int *ptr = new int{ 5 };
+       cout <<"stupid ptr"<< *ptr << endl;
+       delete ptr;
+       int f;
+       cout << "введите число" << endl;
+       cin >> f;
+       SmartPoint<int> pointer = new int(f);
+       *pointer = 25;
+       cout <<"smart ptr"<< *pointer << endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+типы умных указателей
+shared_ptr - общий, решает проблему когда несколько указателей указывают на одну область
+unique_ptr - уникальный,не может копироваться напрямую,только через move
+(move означает захватить содержимое и переместить)!
+auto_ptr - устарел,с C++17 больше не используется, похож на unique_ptr.
+пример всех типов
+
+#include <iostream>
+#include <memory>
+using namespace std;
+template<typename T >
+class SmartPoint
+{
+public:
+       SmartPoint(T *ptr)
+       {
+             cout << "konstructor" << endl;
+             this->ptr = ptr;
+       }
+       SmartPoint()
+       {
+             ptr = nullptr;
+       }
+       ~SmartPoint()
+       {
+             cout << "delete" << endl;
+             delete ptr;
+       }
+       //мы дожны вернуть ссылку на T ведь мы должны вернуть не копию обьекта, а сам обьект
+       T& operator*()
+       {
+             return *ptr;
+       }
+private:
+       T *ptr;
+};
+int main()
+{
+       setlocale(LC_ALL, "Rus");
+       //обычный указатель
+       int *ptr = new int{ 5 };
+       cout <<"stupid ptr"<< *ptr << endl;
+       delete ptr;
+       int f;
+       cout << "введите число" << endl;
+       cin >> f;
+       SmartPoint<int> pointer = new int(f);
+       *pointer = 25;
+       cout <<"smart ptr"<< *pointer << endl;
+       cout << "TTTTTTTTTTTTTTYYYYYYYYYYYYYYYYYYYPPEEEEEEEEEEEEE OF SMAAAAAAAAART POOOOOOOOINTER" << endl;
+       auto_ptr<int>c(new int(4));
+       auto_ptr<int>ew(c);//копирование
+       
+       int *tr = new int(5);
+       unique_ptr<int> v(tr);
+       int *d = v.get();//v.get возвращает указатель в чистом виде
+    cout << "RAW POINT adress get v " << d << " значение  " << *d << endl;
+       
+       int *p = new int(5);
+       unique_ptr<int>p32(p);
+             p32.reset();
+        //наш unique поинтер затирает данные на которые он указывает ииз за того что он эти данные затер он становится пустым
+             
+             double *re = new double(100);
+             unique_ptr<double>fd(re);
+             fd.release(); //release означает освободить, в нашем случаи мы освобождаем то что находится в fd
+             delete re;
+             
+             shared_ptr<int>r(new int{ 10 });
+             shared_ptr<int>r2{ r };
+             r2.use_count();
+             
+}
+
+realease - означает освободить, мы освобождаем то что находится в указателе.
+reset - затиреть адрес в котором хранится значение, и этот указатель становится пустым.
+get - получить чистый адресс
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Умные указатели и динамический массив
+
+int main()
+{
+       int SIZE;
+       long long g;
+       cout << "please cout size" << endl;
+       cin >> SIZE;
+       while (SIZE > 0 && SIZE < 5)
+       {
+             cout << "size must be > 5" << endl;
+             cin >> SIZE;
+       }
+       cout << "please cout a coefficent" << endl;
+       cin >> g;
+       shared_ptr<int[]> ptr(new int[SIZE] {1, 54, 3, 2, 1});
+       for (int i = 0; i < SIZE; i++)
+       {
+             ptr[i] = rand() % g;
+             cout << ptr[i] << endl;
+       }
+       ptr[0] = 0;
+       ptr[1] = 1;
+       ptr[2] = 2;
+       ptr[3] = 3;
+       ptr[4] = 4;
+       cout << "became" << endl;
+       for (int b = 0; b < SIZE; b++)
+       {
+             cout << ptr[b] << endl;
+       }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+R-value ссылки и L-value
+
+template<class T>
+void swap(T& x, T& y)
+{
+       T tmp{ std::move(x) }; // вызывает конструктор перемещения
+       x = std::move(y); // вызывает оператор присваивания перемещением
+       y = std::move(tmp); // вызывает оператор присваивания перемещением
+}
+void R(int&&x)
+{
+       cout << "r-value" << endl;
+       cout << "It is non peremennay" <<" & "<<&x<<" - "<<x<<" && "<<&x<<endl;
+}
+void L(const int &x)
+{
+       cout << "l-value" << endl;
+       cout << "It is non peremennay" << " & " << &x << " - " << x << endl;
+}
+int main()
+{
+       std::string x{ "Anton" };
+       std::string y{ "Max" };
+       std::cout << "x: " << x << '\n';
+       std::cout << "y: " << y << '\n';
+       swap(x, y);
+       std::cout << "x: " << x << '\n';
+       std::cout << "y: " << y << '\n';
+       int&&f = 5;
+       int r = 1;
+       int&w = r;
+       L(r);
+       R(5);
+       L(w);
+       L(f);
+       //так нельзя int&r = 5 или вот так int&&r = r;
+       return 0;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Конструктор перемещения принимает в качестве параметра 
+R-value ссылку
+Оператор присваивания перемещения принимает в качестве параметра
+R-value ссылку
+
+операторы присваивания очень похожи,но в перемещении наш изначальный указатель становится нулевым,это нужно для того что бы не было висячих указателей.
+Кроме того мы в перемещении не разыменовываем указатели,ведь это r-value.
+А в копировании мы разыменовываем,что бы присвоить не адреc , а значение.
+В перемещении перед return *this мы всегда делаем изначальный указатель nullptr(пустым)
+Операторах присваивания всегда возвращаемый параметр это &, то есть return *this
+
+
+// Конструктор копирования,
+// который выполняет глубокое копирование x.m_ptr в m_ptr
+Auto_ptr4(const Auto_ptr4& x)
+{
+m_ptr = new T;
+*m_ptr = *x.m_ptr;
+}
+
+/ Оператор присваивания копированием,
+// который выполняет глубокое копирование x.m_ptr в m_ptr
+Auto_ptr4& operator=(const Auto_ptr4& x)
+{
+// Проверка на самоприсваивание
+if (&x == this)
+return *this;
+// Удаляем всё, что может хранить указатель до этого момента
+delete m_ptr;
+
+обязательная часть
+!!!!!!!!!!!!!!!!!!
+особенность оператора присваивания копированием
+// Копируем передаваемый объект
+m_ptr = new T;
+*m_ptr = *x.m_ptr;
+return *this;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~РАЗНИЦА
+// Конструктор перемещения,
+// который передаёт право собственности на x.m_ptr в m_ptr
+Auto_ptr4(Auto_ptr4&& x) : m_ptr(x.m_ptr)|||
+{
+!!!!!
+особенность
+
+x.m_ptr = nullptr;
+}
+
+// Оператор присваивания перемещением,
+// который передаёт право собственности на x.m_ptr в m_ptr
+Auto_ptr4& operator=(Auto_ptr4&& x)
+{
+// Проверка на самоприсваивание
+if (&x == this)
+return *this;
+// Удаляем всё, что может хранить указатель до этого момента
+delete m_ptr;
+обязательная часть
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+особенности оператора присваивания перемещением
+// Передаём право собственности на x.m_ptr в m_ptr
+m_ptr = x.m_ptr;
+x.m_ptr = nullptr; // мы поговорим об этом чуть позже в этом же уроке
+return *this;
+
+Все операторы присваивания делают проверку на само-присваивание и удаляют то что находилось в копии до этого,
+Плюсом можно сделать в операторах присваивания проверку на nullptr.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Разница особенности между оператором присваивания перемещение
+Перемещением:
+m_ptr = x.m_ptr;
+x.m_ptr = nullptr;
+return *this;
+Копирования:
+m_ptr = new T;
+*m_ptr = *x.m_ptr;
+Перевод;
+Перемещение:
+копия указателя = изначальному указатель;
+изначальный указатель = нулевой;     //что бы не было висячих указателей
+Копирования:
+копия указателя = выделенная память шаблонного типа;
+*значение копии = *значение изначального указателя;
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Разница между конструкторами
+Конструкторы
+
+Перемещение:
+m_ptr = x.m_ptr;
+x.m_ptr = nullptr;
+
+Копирование:
+m_ptr = new T;
+*m_ptr = *x.m_ptr;
+
+Операторы присваивания
+
+Перемещение:
+if(&x = this)
+    return *this;
+delete m_ptr;
+
+m_ptr = x.m_ptr;
+x.m_ptr = nullptr;
+return *this;
+
+Копирование:
+if(&x = this)
+    return *this;
+delete m_ptr;
+
+m_ptr = new T;
+*m_ptr = *x.m_ptr;
+return *this;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Обязательная часть такая же:
+
+проверяем на самоприсваиваниеl;
+Удаляем динамическую память копии;
+и дальше уже особенности.
+
+В перемещении мы просто присваиваем копии, значений изначальных обьектов
+И делаем изначальный объект в конце, nullptr
+А в конструктора
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+template<typename T>
+class Auto_ptr
+{
+       T* copy_ptr;
+public:
+       Auto_ptr(T* ptr = nullptr) : copy_ptr(ptr)
+       {}     
+       ~Auto_ptr()
+       {
+             delete copy_ptr;
+       }
+       Auto_ptr(const Auto_ptr& x)
+       {
+             copy_ptr = new T;
+             *copy_ptr = *x.copy_ptr;
+       }
+       Auto_ptr(Auto_ptr&&x) : copy_ptr(x.copy_ptr)
+       {
+             x.copy_ptr = nullptr;
+       }
+       Auto_ptr&operator =(const Auto_ptr&x)
+       {
+             if (&x == this)
+                    return *this;
+             delete copy_ptr;
+             if (x.copy_ptr) 
+{
+                    copy_ptr = new T;
+                    *copy_ptr = x.copy_ptr;
+             }
+             else
+                    copy_ptr = nullptr;
+             return *this;
+       }
+       Auto_ptr& operator=(Auto_ptr&& x)
+       {
+             // Проверка на самоприсваивание
+             if (&x == this)
+                    return *this;
+             // Удаляем всё, что может хранить указатель до этого момента
+             delete copy_ptr;
+             // Передаём право собственности на x.m_ptr в m_ptr
+         !    copy_ptr = x.copy_ptr;
+             x.copy_ptr = nullptr; 
+
+             return *this;
+       }
+       T* operator -> () const
+       {
+             return copy_ptr;
+       }
+       T& operator *() const
+       {
+             return *copy_ptr;
+       }
+       bool IsNull() const
+       {
+             return copy_ptr = nullptr;
+       }
+};
+class Item
+{
+public:
+       Item()
+       {
+             cout << "Item acquired\n";
+       }
+       ~Item()
+       {
+             cout << "Item destroyed\n";
+       }
+};
+Auto_ptr<Item> generateItem()
+{
+       Auto_ptr<Item> item(new Item);
+       return item; // это возвращаемое значение приведет к вызову конструктора перемещения
+}
+int main()
+{
+       setlocale(LC_ALL, "Rus");
+       Auto_ptr<Item> mainy;
+       mainy = generateItem();
+       cout << "УРА ВСЕ РАБОТАЕТ" << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+итераторы и вектора и try catch
+
+запись такого типа
+vector<int>::iterator it = vec.begin();
+можно записать и так
+auto it = vec.begin();
+так же можно сделать в циклах
+for(auto it = vec.begin(); it != vec.end();it++)
+
+#include <iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+       setlocale(LC_ALL, "Rus");
+       cout << "УРА ВСЕ РАБОТАЕТ" << endl;
+       cout << "\n\n" << endl;
+       vector<int>vec;
+       vec.push_back(0);
+       vec.push_back(1);
+       vec.push_back(2);
+       vec.push_back(3);
+       try
+       {
+             vec.at(4);
+       }
+       catch (const out_of_range & ex)
+       {
+             cout << "ERORR out_of_range" << endl;
+             cout << ex.what() << endl;
+       }
+       try {
+             vec.at(5);
+       }
+       catch (const std::exception& er)
+       {
+             cout << "eror, on at5 " << endl;
+             cout << er.what() << endl;
+       }
+       vector<int>::iterator it = vec.begin();
+       it++;
+       *it += 2;
+       *it -= 2;
+       int static coun = -1;
+       cout << "it " << *it << endl;
+       vector<int>v{0,1,2,3,4,5,6,7,8,9,10};
+       for (vector<int>::const_iterator i = v.cbegin(); i != v.cend(); i++)
+       {
+             coun++;
+             cout << "it is a  " << coun << "  element  " << *i << endl;
+       }
+       advance(it, 1);
+       vector<double>vt{ 1.03,13.41,48.212,90.42,23.32,342.543,2432.54,325.43,234.55 };
+       auto iter = vt.begin();
+       cout << *iter << endl;
+       coun = -1;
+       for (vector<double>::const_iterator b = vt.cbegin(); b != vt.cend(); b++)
+       {
+             coun++;
+             cout << "it is a double  " << coun << " element   " << *b << endl;
+       }
+       coun = -1;
+       cout << "\n\n\n" << endl;
+       cout << "after" << endl;
+       int kuda;
+    metka:
+       cout << "Напишите в какую ячейку вы хотите вставить элемент?" << endl;
+       cout << "Напоминаю что вектор состоит из 8 элементов, и ваша ячейка не должна быть больше 8" << endl;
+       cin >> kuda;
+       switch (kuda)
+       {
+       case 1:
+             iter++;
+             break;
+       case 2:
+             iter += 2;
+             break;
+       case 3:
+             iter += 3;
+             break;
+       case 4:
+             iter += 4;
+             break;
+       case 5:
+             iter += 5;
+             break;
+       case 6:
+             iter += 6;
+             break;
+       case 7:
+             iter += 7;
+             break;
+       default:
+             goto metka;
+             break;
+       }
+       double number;
+       cout << "\n" << endl;
+       cout << "Напишите дробное число" << endl;
+       cin >> number;
+       cout << "\n\n" << endl;
+       vt.insert(iter, number);
+       cout << "Вот что стало в векторе" << endl;
+       for (vector<double>::const_iterator b = vt.cbegin(); b != vt.cend(); b++)
+       {
+             coun++;
+             cout << "it is a double  " << coun << " element   " << *b << endl;
+       }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Перемещение и копирование в динамических массивах
+
+// Конструктор перемещения
+DynamicArray(DynamicArray &&arr): m_length(arr.m_length), m_array(arr.m_array)
+{
+arr.m_length = 0;
+arr.m_array = nullptr;
+}
+// Оператор присваивания перемещением
+DynamicArray& operator=(DynamicArray &&arr)
+{
+if (&arr == this)
+return *this;
+delete[] m_array;
+m_length = arr.m_length;
+m_array = arr.m_array;
+arr.m_length = 0;
+arr.m_array = nullptr;
+return *this;
+}
+ЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁЁ
+копирование
+оператор присваивание копированием
+
+DynamicArray& operator=(const DynamicArray &arr)
+{
+if (&arr == this)
+return *this;
+
+delete[] m_array;
+
+m_length = arr.m_length;
+m_array = new T[m_length];
+for (int i = 0; i < m_length; ++i)
+m_array[i] = arr.m_array[i];
+return *this;
+}
+
+// Конструктор копирования
+DynamicArray(const DynamicArray &arr)
+: m_length(arr.m_length)
+{
+m_array = new T[m_length];
+for (int i = 0; i < m_length; ++i)
+m_array[i] = arr.m_array[i];
+}
+По сути тоже самое с этим
+перемещение:
+m_ptr = x.m_ptr;
+x.m_ptr = nullptr;
+копирование:
+m_ptr = new T;
+*m_ptr = *x.m_ptr;
+for(int i = 0; i < m_lenght; ++i)
+{
+         m_array[i] = arr.m_array[i];
+}
+
+копия - это имя переменной
+изначальное значение - это имя объекта переменной
+В копировании мы всегда должны присваивать указателю либо массиву динамическую память(затем ее в деструкторе уничтожать)
+m_array =new T[m_lenght]
+Во всех копированиях с массивом должны быть такая конструкция 
+Во всех первоначальных аргументах(копирования и перемещения) стоит ссылка на объект.
+Но в перемещении эта ссылка R-value
+!!!!
+Во всех перемещениях мы просто присваиваем копии значение изначального значения 
+и заменяем эту строчку
+for(int i=0; i<m_lenght;i++)
+{
+m_array[i] =arr.m_array[i];
+}
+этой
+       arr.m_arr = nullptr;
+       arr.lenght = 0;
+
+В копирование мы всегда должны присвоить динамическую память копии массива.
+И копии размера присвоить изначальному размеру.
+В копирование всегда перед концом должна стоять эта строчка
+ for (int i = 0; i < lenght; i++)
+                    m_arr[i] = arr.m_arr[i];
+Во всех копированиях должна стоять эта строчка
+lenght = arr.lenght;
+             m_arr = new T[lenght];
+                    if (arr.m_arr) {
+                           for (int i = 0; i < lenght; i++)
+                                 m_arr[i] = arr.m_arr[i];
+                    }
+В конструкторах эта можно заменить делегированием
+во всех перемещениях должна стоять эта строчка
+             lenght = arr.lenght;
+             m_arr = arr.m_arr;
+             arr.m_arr = nullptr;
+             arr.lenght = 0;
+
+
+template<typename T>
+class Dynamic
+{
+private:
+       int   lenght;
+             T* m_arr;
+public:
+       Dynamic(int lenght) : m_arr(new T[lenght]), lenght(lenght)
+       {}
+       Dynamic(const Dynamic &&arr) : lenght(arr.lenght), m_arr(arr.m_arr)
+       {
+             arr.m_arr = nullptr;
+             arr.lenght = 0;
+       }
+       Dynamic&operator=(Dynamic &arr)
+       {
+             if (&arr == this)
+                    return *this;
+             delete[]m_arr;
+             lenght = arr.lenght;
+             m_arr = new T[lenght];
+                    if (arr.m_arr) {
+                           for (int i = 0; i < lenght; i++)
+                                 m_arr[i] = arr.m_arr[i];
+                    }
+                    else {
+                           m_arr = nullptr;
+                           lenght = 0;
+                    }
+                       arr.m_arr = nullptr;
+                        arr.lenght =  0;
+
+             return *this;
+       }
+       Dynamic(const Dynamic &arr) : lenght(arr.lenght)
+       {
+             m_arr = new T[lenght];
+             for (int i = 0; i < lenght; i++)
+                    m_arr[i] = arr.m_arr[i];
+       }
+       Dynamic&operator=(const Dynamic &&arr)
+       {
+             if (&arr = this)
+                    return *this;
+             delete[]m_arr;
+             lenght = arr.lenght;
+             m_arr = arr.m_arr;
+             m_arr = nullptr;
+             lenght = 0;
+             return *this;
+       }
+       ~Dynamic()
+       {
+             delete[]m_arr;
+       }
+};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LIST C++
+
+using namespace std;
+int main()
+{
+       list<int>sfd{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+       int first = sfd.front();
+       int last = sfd.back();
+       for (auto&r : sfd) {
+             cout << r << "\t";
+             cout << endl;
+       }
+       sfd.resize(50, 10);
+       sfd.push_front(100);
+       sfd.push_back(200);
+       sfd.pop_back();
+       sfd.pop_front();
+       int coun = -1;
+       for (auto it = sfd.begin(); it != sfd.end(); it++)
+       {
+             coun++;
+             cout << "it is a element number  " << coun << "  value is " << *it << endl;
+       }
+       sfd.push_front(100);
+       sfd.push_back(200);
+       sfd.emplace_back(20);      
+       sfd.emplace_front(10);
+       cout << "\n\n\n\n"<<"after emplace front 10 and back 20" << endl;
+       coun = -1;
+       
+       for (auto itr = sfd.begin(); itr != sfd.end(); itr++) {
+             coun++;
+             cout << "it is a element number  " << coun << "  value is " << *itr << endl;
+       }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+template<typename T>
+class Dynamic
+{
+private:
+       int lenght;
+       T*m_arr;
+public:
+       Dynamic(int lenght) : m_arr(new T[lenght]), lenght(lenght)
+       {
+       }
+       Dynamic(const Dynamic &arr) : lenght(arr.lenght)
+       {
+             m_arr = new T[lenght];
+             for (int i = 0; i < lenght; i++)
+             {
+                    m_arr[i] = arr.m_arr[i];
+             }
+       }
+       Dynamic(const Dynamic &&arr) :lenght(arr.lenght), m_arr(arr.m_arr)
+       {
+             arr.m_arr = nullptr;
+             arr.lenght = 0;
+       }
+       Dynamic&operator=(const Dynamic &&arr)
+       {
+             if (&arr = this)
+                    return *this;
+             delete[]m_arr;
+             m_arr = arr.m_arr;
+             lenght = arr.lenght;
+             arr.m_arr = nullptr;
+             arr.lenght = 0;
+             return *this;
+       }
+       Dynamic&operator=(const Dynamic&arr)
+       {
+             if (&arr = this)
+                    return *this;
+             delete[]m_arr;
+             lenght = arr.lenght;
+             m_arr = new T[lenght];
+             if (arr.m_arr)
+             {
+                    for (int i = 0;i < lenght;++i)
+                    {
+                           m_arr[i] = arr.m_arr[i];
+                    }
+             }
+             else
+             {
+                    m_arr = nullptr;
+                    lenght = 0;
+             }
+             return *this;
+       }
+       friend ostream&operator<<(ostream&os, const Dynamic<int>&er);
+};
+ostream&operator<<(ostream&os, const Dynamic<int>&er)
+{
+       os <<"длина "<<er.lenght <<" массив-значение  "<< *er.m_arr <<" массив-адрес  "<<er.m_arr<< endl;
+       return os;
+}
+int main()
+{
+       setlocale(LC_ALL, "rus");
+       Dynamic<int>r(3);
+       Dynamic<int>g(r);
+       cout << g << endl;
+       cout << r << endl;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#include <initializer_list>
+#include <iostream>
+using namespace std;
+template<typename T>
+class Dynamic
+{
+private:
+       int lenght;
+       T*m_arr;
+public:
+       Dynamic(int lenght) : m_arr(new T[lenght]), lenght(lenght)
+       {
+             cout << "Constructor" <<"\n"<< endl;
+       }
+       Dynamic()
+       {
+             this->lenght = 0;
+             this->m_arr = nullptr;
+             cout << "Constructor" << "\n" << endl;
+       }
+       Dynamic(const Dynamic &arr) : lenght(arr.lenght)
+       {
+             m_arr = new T[lenght];
+             for (int i = 0; i < lenght; i++)
+             {
+                    m_arr[i] = arr.m_arr[i];
+             }
+             cout << "Constructor copy" << "\n" << endl;
+       }
+       Dynamic(const Dynamic &&arr) :lenght(arr.lenght), m_arr(arr.m_arr)
+       {
+             arr.m_arr = nullptr;
+             arr.lenght = 0;
+             cout << "Constructor move" <<"\n"<< endl;
+       }
+       Dynamic&operator=(const Dynamic &&arr)
+       {
+             if (&arr = this)
+                    return *this;
+             delete[]m_arr;
+             m_arr = arr.m_arr;
+             lenght = arr.lenght;
+             arr.m_arr = nullptr;
+             arr.lenght = 0;
+             cout << "Operator = move " <<"\n"<< endl;
+             return *this;
+             
+       }
+       ~Dynamic()
+       {
+             delete[]m_arr;
+             this->lenght = 0;
+             m_arr = nullptr;
+       }
+       Dynamic&operator=(const Dynamic&arr)
+       {
+             if (&arr = this)
+                    return *this;
+             delete[]m_arr;
+             lenght = arr.lenght;
+             m_arr = new T[lenght];
+             if (arr.m_arr)
+             {
+                    for (int i = 0;i < lenght;++i)
+                    {
+                           m_arr[i] = arr.m_arr[i];
+                    }
+             }
+             else
+             {
+                    m_arr = nullptr;
+                    lenght = 0;
+             }
+             cout << "Operator = copy" <<"\n"<< endl;
+             return *this;
+       }
+       T& operator [] (int index) {
+       
+             return m_arr[index];
+       
+       }
+       
+       friend ostream&operator<<(ostream&os, const Dynamic<int>&er);
+};
+ostream&operator<< (ostream&os, const Dynamic<int>&er)
+{
+       os <<" длина ->  "<<er.lenght <<"  массив-значение ->  "<< *er.m_arr <<"   массив-адреc ->  "<<er.m_arr<< endl;
+       return os;
+}
+  
+int main()
+{
+       setlocale(LC_ALL, "rus");
+       Dynamic<int>r(3);
+       Dynamic<int>g(r);
+       r[0] = 1;
+       r[1] = 2;
+       r[2] = 3;
+       cout << g << endl;
+       cout << r << endl;
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Мультипоточность в C++. Thread и Chrono
+
+#include <algorithm>
+#include <iostream>
+#include <thread>
+#include <chrono>
+using namespace std;
+void DoWork()
+{
+       for (size_t i = 0; i < 10; i++)
+       {
+             this_thread::sleep_for(chrono::milliseconds(1000));
+             cout << "ID потока = " << this_thread::get_id() << "\tDowork\t" <<  i << endl;
+       }
+}
+// Распаралерили задачу, так как функция долго выполнялась
+int main() {
+       setlocale(LC_ALL, "ru");
+       thread th(DoWork); // Без круглых скобок. Указатель на массив
+       // th.detach() отпускаем в свободное плавание и в случаи завершения  основного потока, этот 2 поток тоже обрывается
+       for (size_t i = 0; i < 10; i++) {
+             this_thread::sleep_for(chrono::milliseconds(1000));
+             cout << "ID потока = " << this_thread::get_id() << "\tmain\t" << i  << endl;
+       }
+       // Дожидаемся окончание логики функции потока в определенном месте, в том  случаии если нам нужны данные этого потока
+       th.join();
+       // Если программа доходит до join, то ОСНОВНОЙ поток БЛОКИРУЕТСЯ и ждет  выполнение того поток
+       // Если join не ставим, то будет вызван деструктор 2 потока и получим  ошибку так как это у потока не получится закрыть    программу
+       return 0;
+}
+____________________________________________________________________________________________________________________________________________________________________

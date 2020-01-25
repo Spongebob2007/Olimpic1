@@ -1,48 +1,90 @@
-#include <iostream>
-#include <climits>
-#include <cstdio>
-using namespace std;
+// ConsoleApplication2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+#include<math.h>
 
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
 int main()
 {
-   
-   int a,b,c;
-   long long n;
-   scanf("%lld %d %d", &n , &a, &b, &c);
-   long long minNumber[61][61][61];
-   for (int ia = 0; ia <= a; ia++)
-   {
-      for (int ib = 0; ib <= b; ib++)
-      {
-          for (int ic = 0; ic <= c; ic++)
-           {
-              minNumber[ia][ib][ic] = INT_MAX;
-           }
-      }
-      
-   }
-   minNumber[a][b][c] = n;
-   for(int a1 = a; a1 >= 0; a1--)
-   {
-      for(int b1 = b; b >= 0; b1--)
-      {
-          for(int c1 = c; c >= 0; c--)
-          {
-              if(a1 > 0)
-              {
-                   minNumber[a1 - 1][b1][c1] = min(minNumber[a1 - 1][b1][c1], minNumber[a1][b1][c1] / 2);
-              }
-              if(b1 > 0)
-              {
-                  minNumber[a1][b1 - 1][c1] = min(minNumber[a1][b1 - 1][c1], (minNumber[a1][b1][c1] + 1) / 2);
-              }
-              if(c1 > 0)
-              {
-                  minNumber[a-1][b1][c1 - 1] = min(minNumber[a1][b1][c1 - 1], (minNumber[a1][b1][c1] - 1) / 2);
-              }
-          }
-      }
-   }
-   cout<<minNumber[0][0][0];
-   return 0;
+
+
+    int a, b, c;
+
+    int n;
+
+    cin >> n;
+    cin >> a;
+    cin >> b;
+    cin >> c;
+
+    int minNumber[61][61][61];
+
+    for (int ia = 0; ia < a; ia++)
+
+    {
+
+        for (int ib = 0; ib < b; ib++)
+
+        {
+
+            for (int ic = 0; ic < c; ic++)
+
+            {
+
+                minNumber[ia][ib][ic] = INT_MAX;
+
+            }
+
+        }
+
+
+
+    }
+
+    int count = 0;
+
+    for (int a1 = a; a1 >= 0; a1--)
+
+    {
+
+        for (int b1 = b; b >= 0; b1--)
+
+        {
+
+            for (int c1 = c; c >= 0; c--)
+
+            {
+                if (minNumber[a1][b1][c1] % 2 > 0)
+                {
+                    if (c1 > 0)
+                    {
+                        minNumber[a1][b1][c1 - 1] = (minNumber[a1][b1][c1] - 1) / 2;
+                        count = minNumber[a1][b1][c1];
+                    }
+                    if (c1 == 0)
+                    {
+                        minNumber[a1][b1 - 1][c1] = (minNumber[a1][b1][c1] + 1) / 2;
+                        count = minNumber[a1][b1][c1];
+                    }
+
+                }
+                if(minNumber[a1][b1][c1] % 2 == 0)
+                 {
+                    if (a1 > 0)
+                    {
+                        minNumber[a1 - 1][b1][c1] = minNumber[a1][b1][c1] / 2;
+                        count = minNumber[a1][b1][c1];
+                    }
+                }
+
+            }
+
+        }
+    
+    }
+
+    cout << count;
+    return 0;
 }

@@ -28,7 +28,6 @@ int main()
     char d;
     while(x != 0 && y != 0)
     {
-     cout<<x<<y;
      if(x > y>0)
        {
           cout<<"BGB";
@@ -48,10 +47,14 @@ int main()
           if(d == 'B')
           {
               cout<<"GB";
+              x--;
+              y--;
           }
           if(d == 'G')
           {
               cout<<"BG";
+              y--;
+              x--;
           }
       }
       
